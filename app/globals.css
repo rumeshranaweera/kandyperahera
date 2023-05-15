@@ -6,12 +6,6 @@ body,
 html {
   @apply scroll-smooth;
 }
-::selection {
-  @apply text-black bg-yellow-500/90;
-}
-img::selection {
-  @apply bg-yellow-500/40;
-}
 
 h1,
 h2,
@@ -22,6 +16,15 @@ h6 {
   @apply font-canveat;
 }
 
+.primary-btn {
+  @apply h-10 px-3 py-1 font-semibold text-black capitalize bg-yellow-500 rounded-full font-canveat hover:bg-yellow-600;
+}
 .paragraph {
   @apply text-xl font-semibold;
+}
+::selection {
+  @apply text-black bg-yellow-500/90;
+}
+img::selection {
+  @apply bg-yellow-500/40;
 }

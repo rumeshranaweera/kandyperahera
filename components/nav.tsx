@@ -13,10 +13,7 @@ function Nav() {
         </div>
         {/* right */}
         <div>
-          <motion.button
-            whileTap={{ scale: 1.1 }}
-            className="h-10 px-3 py-1 font-semibold text-black bg-yellow-500 rounded-full font-canveat hover:bg-yellow-600 "
-          >
+          <motion.button whileTap={{ scale: 1.1 }} className="primary-btn">
             Tickets
           </motion.button>
         </div>

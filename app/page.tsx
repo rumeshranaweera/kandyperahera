@@ -5,6 +5,7 @@ import History from "../components/history ";
 import { AnimatePresence, motion } from "framer-motion";
 import Schedule from "../components/schedule";
 import Carousel from "../components/carousel";
+import Offers from "@/components/offers";
 
 export default function Home() {
   const [showFullAbout, setShowFullAbout] = useState(false);
@@ -62,6 +63,7 @@ export default function Home() {
         {/* history section */}
         <History />
         <Schedule />
+        <Offers />
 
         {/* <Carousel /> */}
       </div>
