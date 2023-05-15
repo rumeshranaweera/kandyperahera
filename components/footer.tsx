@@ -16,11 +16,7 @@ function Footer() {
           </h4>
         </div>
         {/* right */}
-        <h5 className="text-sm hover:text-yellow-500">
-          <a href="https://kandyesalaperahera.com/" target="_blank">
-            photos source : kandyesalaperahera.com
-          </a>
-        </h5>
+        <h6>tel : 123456789</h6>
       </div>
     </footer>
   );

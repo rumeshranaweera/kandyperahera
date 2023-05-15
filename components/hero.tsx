@@ -4,8 +4,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { useRef } from "react";
 
-const randomval = Math.floor(Math.random() * 8);
+const randomval = Math.floor(Math.random() * 7);
+
+const imgUrls = Array.from({ length: 8 }, (_, i) => {
+  return `/imgs/img-${i}.jpg`;
+});
 function Hero() {
+  const imageUrl = imgUrls[randomval];
+  console.log(imageUrl);
+
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -26,9 +33,9 @@ function Hero() {
         property="ture"
       >
         <Image
-          src={`/images/img-${randomval}.jpg`}
+          src={`${imageUrl}`}
           fill
-          alt="main image"
+          alt="conver image"
           className="object-cover overflow-hidden"
           priority
         />
@@ -69,6 +76,16 @@ function Hero() {
           width={40}
         />
       </motion.div>
+      <motion.h6
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ delay: 5 }}
+        className="absolute text-xs right-2 hover:text-yellow-500 bottom-2"
+      >
+        <a href="https://kandyesalaperahera.com/" target="_blank">
+          images source : kandyesalaperahera.com
+        </a>
+      </motion.h6>
     </section>
   );
 }

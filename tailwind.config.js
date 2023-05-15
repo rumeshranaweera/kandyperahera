@@ -12,7 +12,7 @@ module.exports = {
         inter: ["var(--font-inter)"],
       },
       backgroundImage: {
-        "footer-img": "url('/images/footer-bg.png')",
+        "footer-img": "url('/imgs/footer-bg.png')",
       },
     },
   },
