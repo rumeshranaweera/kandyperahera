@@ -30,7 +30,7 @@ export default function Home() {
               } md:line-clamp-none paragraph`}
             >
               Kandy Perahera is one of the most important cultural events in Sri
-              Lanka, and it's a festival that is steeped in tradition and
+              Lanka, and it&rsquo;s a festival that is steeped in tradition and
               history. This annual event, which takes place in the city of
               Kandy, is a celebration of the sacred Tooth Relic of the Buddha,
               which is housed in the Temple of the Tooth. The festival dates
@@ -42,12 +42,12 @@ export default function Home() {
               heritage of the island. The festival lasts for ten days, and each
               day is filled with events that are both entertaining and
               educational. <br />
-              So we'll provide you with all the information you need to know
-              about Kandy Perahera. From the festival's history and significance
-              to its schedule and locations, we'll cover everything you need to
-              plan your visit and make the most of your experience. So come
-              along and join us as we explore this amazing festival and
-              everything it has to offer!
+              So we&rsquo;ll provide you with all the information you need to
+              know about Kandy Perahera. From the festival&rsquo;s history and
+              significance to its schedule and locations, we&rsquo;ll cover
+              everything you need to plan your visit and make the most of your
+              experience. So come along and join us as we explore this amazing
+              festival and everything it has to offer!
             </motion.p>
             <motion.span
               layout="position"
@@ -62,6 +62,7 @@ export default function Home() {
         {/* history section */}
         <History />
         <Schedule />
+
         {/* <Carousel /> */}
       </div>
     </main>
