@@ -1,12 +1,14 @@
+import { motion } from "framer-motion";
+
 const Offers = () => {
   return (
     <section className=" body-font">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="mb-20 text-center">
+      <div className="container px-5 py-16 mx-auto">
+        <div className="mb-10 text-center">
           <h2 className="my-2 mb-4 text-4xl font-medium text-center capitalize sm:text-3xl title-font">
             What we offer
           </h2>
-          <p className="mx-auto text-base leading-relaxed paragraph xl:w-2/4 lg:w-3/4">
+          <p className="mx-auto text-base leading-relaxed paragraph lg:w-full">
             Secure your spot and enjoy the best views of the Kandy Perahera with
             our reserved seating, ensuring a memorable and hassle-free
             experience.
@@ -29,7 +31,11 @@ const Offer = ({ title }: { title: string }) => {
   return (
     <div className="w-full p-2 sm:w-1/2">
       <div className="flex items-center h-full p-4 bg-yellow-500 rounded">
-        <svg
+        <motion.svg
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2 }}
           fill="none"
           stroke="currentColor"
           strokeLinecap="round"
@@ -40,7 +46,7 @@ const Offer = ({ title }: { title: string }) => {
         >
           <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
           <path d="M22 4L12 14.01l-3-3" />
-        </svg>
+        </motion.svg>
         <span className="font-medium text-black capitalize title-font">
           {title}
         </span>

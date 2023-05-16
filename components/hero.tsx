@@ -11,7 +11,7 @@ const imgUrls = Array.from({ length: 8 }, (_, i) => {
 });
 function Hero() {
   const imageUrl = imgUrls[randomval];
-  console.log(imageUrl);
+  // console.log(imageUrl);
 
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({

@@ -6,14 +6,18 @@ function Hstory() {
   const [isopen, setIsopen] = useState(false);
   return (
     <>
-      <motion.div layoutId="history" onClick={() => setIsopen(!isopen)}>
-        <h2 className="my-2 text-4xl capitalize">History of perahera</h2>
+      <motion.div
+        className="my-10"
+        layoutId="history"
+        onClick={() => setIsopen(!isopen)}
+      >
+        <h2 className="my-8 text-4xl capitalize">History of perahera</h2>
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 " />
           <div className="relative flex overflow-hidden rounded-lg">
             {/* left - text */}
             <section className="max-w-md md:max-w-2xl">
-              <p className="relative paragraph line-clamp-[10] hover:cursor-pointer">
+              <p className="relative paragraph line-clamp-[10] ">
                 Kandy Perahara is a traditional festival that takes place
                 annually in Kandy, Sri Lanka. The festival has a long and rich
                 history, dating back to the early 18th century. The festival is
@@ -90,7 +94,7 @@ const Model = ({ setIsopen }: { setIsopen: any }) => {
           <div className="relative flex overflow-hidden rounded-lg">
             {/* left - text */}
             <section className=" md:max-w-2xl">
-              <p className="relative overflow-auto xl:overflow-auto paragraph hover:cursor-pointer">
+              <p className="relative overflow-auto xl:overflow-auto paragraph">
                 Kandy Perahara is a traditional festival that takes place
                 annually in Kandy, Sri Lanka. The festival has a long and rich
                 history, dating back to the early 18th century. The festival is

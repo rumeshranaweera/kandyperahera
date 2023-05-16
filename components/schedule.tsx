@@ -45,7 +45,7 @@ function Schedule() {
   ];
   return (
     <div className="w-full ">
-      <h2 className="my-2 text-4xl capitalize">schedule</h2>
+      <h2 className="my-8 text-4xl capitalize">schedule</h2>
       {/* top */}
       <div className="grid grid-cols-2 text-3xl font-semibold text-black bg-yellow-500">
         <h3>Event</h3>
