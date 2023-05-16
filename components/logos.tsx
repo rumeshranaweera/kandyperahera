@@ -26,7 +26,7 @@ const useBoundedScroll = (bounds: number) => {
   return { scrollBounded: scrollYBounded, scrollYBoundedProgress };
 };
 
-function Logo({ logoanimation = false }: { logoanimation?: boolean }) {
+function Logo({ logoAnimation = false }: { logoAnimation?: boolean }) {
   const { scrollYBoundedProgress } = useBoundedScroll(100);
 
   const dynamicSize = useTransform(
@@ -34,7 +34,7 @@ function Logo({ logoanimation = false }: { logoanimation?: boolean }) {
     [0, 1],
     ["1.5rem", "1.3rem"]
   );
-  const animationVal = logoanimation ? dynamicSize : "1.5rem";
+  const animationVal = logoAnimation ? dynamicSize : "1.5rem";
 
   return (
     <div className="cursor-pointer select-none hover:text-yellow-300">

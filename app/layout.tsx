@@ -2,6 +2,7 @@ import Nav from "../components/nav";
 import Footer from "../components/footer";
 import "./globals.css";
 import { Inter, Roboto_Mono, Caveat } from "next/font/google";
+import Appcontext from "./context/appContext";
 
 const canveat = Caveat({
   subsets: ["latin"],
@@ -25,11 +26,13 @@ export default function RootLayout({
       <body
         className={`${canveat.variable} ${inter.className} font-inter bg-slate-900 min-h-screen relative text-slate-100 flex flex-col`}
       >
-        <Nav />
+        <Appcontext>
+          <Nav />
 
-        <main className="grow">{children}</main>
+          <main className="grow">{children}</main>
 
-        <Footer />
+          <Footer />
+        </Appcontext>
       </body>
     </html>
   );

@@ -1,16 +1,34 @@
+import { useGlobalContext } from "@/app/context/appContext";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { GrClose } from "react-icons/gr";
 
 function Hstory() {
-  const [isopen, setIsopen] = useState(false);
+  // const { isHistoryOpen, setIsHistoryOpen, historyModelRef } =
+  //   useGlobalContext();
+  const [isHistoryModelOpen, setIsHistoryModelOpen] = useState(false);
+  const modelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: any) => {
+      if (!modelRef.current?.contains(e.target)) {
+        setIsHistoryModelOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  });
+
   return (
     <>
-      <motion.div
-        className="my-10"
-        layoutId="history"
-        onClick={() => setIsopen(!isopen)}
-      >
+      <motion.div className="my-10" onClick={() => setIsHistoryModelOpen(true)}>
         <h2 className="my-8 text-4xl capitalize">History of perahera</h2>
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 " />
@@ -69,32 +87,48 @@ function Hstory() {
           </div>
         </div>
       </motion.div>
-      <AnimatePresence>{/* <Model setIsopen={setIsopen} /> */}</AnimatePresence>
+      <AnimatePresence>
+        {isHistoryModelOpen && (
+          <div ref={modelRef}>
+            <Model setIsHistoryModelOpen={setIsHistoryModelOpen} />
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
 
 export default Hstory;
 
-const Model = ({ setIsopen }: { setIsopen: any }) => {
+const Model = ({
+  setIsHistoryModelOpen,
+}: {
+  setIsHistoryModelOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
+  // //@ts-expect-error
+  // const { historyModelRef } = useGlobalContext();
   return (
     <motion.div
-      layoutId="history"
-      className="fixed top-0 left-0 z-50 w-full h-full m-auto"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      className="fixed flex-col xl:flex-row top-0 left-0 z-50 w-full h-full m-auto bg-slate-900/10 backdrop-blur-[2px]"
       layout="size"
     >
-      <motion.div
-        onClick={() => setIsopen(false)}
-        className="relative w-full m-auto my-auto max-h-60 xl:max-h-96 max-w-7xl"
-      >
+      <div className="absolute inset-0 m-auto max-w-7xl max-h-[60vh]">
         <h2 className="my-2 text-4xl capitalize">History of perahera</h2>
-        <div className="relative bg-slate-100/40 backdrop-blur-sm">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 " />
-
-          <div className="relative flex overflow-hidden rounded-lg">
+        <div className="relative backdrop-blur-sm">
+          <button
+            className="absolute z-10 primary-btn top-2 right-2"
+            onClick={() => setIsHistoryModelOpen(false)}
+          >
+            <GrClose />
+          </button>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-900/20" />
+          <div className="relative flex w-full h-full rounded-lg">
             {/* left - text */}
-            <section className=" md:max-w-2xl">
-              <p className="relative overflow-auto xl:overflow-auto paragraph">
+            <section className="max-h-[60vh] overflow-y-scroll  md:max-w-2xl">
+              <p className="relative text-left paragraph [&br]:my-3">
                 Kandy Perahara is a traditional festival that takes place
                 annually in Kandy, Sri Lanka. The festival has a long and rich
                 history, dating back to the early 18th century. The festival is
@@ -136,17 +170,17 @@ const Model = ({ setIsopen }: { setIsopen: any }) => {
             </section>
 
             {/* right - photos */}
-            <section className="absolute top-0 right-0 w-1/2 h-full shadow-inner -z-10 shadow-black">
+            <section className="absolute top-0 right-0 w-1/2 h-full overflow-hidden shadow-inner -z-10 shadow-black">
               <Image
                 src={"/imgs/img-2.jpg"}
                 fill
                 alt=""
-                className="hidden object-cover xl:inline-block"
+                className="hidden object-cover xl:inline-block max-h-[60vh]"
               />
             </section>
           </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };

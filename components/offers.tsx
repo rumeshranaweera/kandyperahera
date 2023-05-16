@@ -47,7 +47,7 @@ const Offer = ({ title }: { title: string }) => {
           <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
           <path d="M22 4L12 14.01l-3-3" />
         </motion.svg>
-        <span className="font-medium text-black capitalize title-font">
+        <span className="font-medium text-left text-black capitalize title-font">
           {title}
         </span>
       </div>

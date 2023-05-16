@@ -2,17 +2,19 @@
 import { useState } from "react";
 import Hero from "../components/hero";
 import History from "../components/history ";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Schedule from "../components/schedule";
 import Carousel from "../components/carousel";
 import Offers from "@/components/offers";
+import ImgAndText from "@/components/imgAndText";
 
 export default function Home() {
   const [showFullAbout, setShowFullAbout] = useState(false);
+
   return (
     <main>
       <Hero />
-      <div className="max-w-4xl px-1 mx-auto text-center">
+      <div className="max-w-4xl px-1 mx-auto text-center ">
         {/* intro */}
         <div className="py-2 rounded-lg bg-yellow-500/5">
           <h2 className="my-2 text-4xl">
@@ -62,6 +64,12 @@ export default function Home() {
         </div>
         {/* history section */}
         <History />
+        <ImgAndText swipOrder paragraph="test para" title="test title" />
+        <ImgAndText
+          paragraph="hello helloo test"
+          title="test title 2"
+          buttonText="test button"
+        />
         <Schedule />
         <Offers />
 
