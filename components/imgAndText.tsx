@@ -13,7 +13,6 @@ const ImgAndText = ({
   swipOrder?: boolean;
   buttonText?: string;
 }) => {
-  console.log(buttonText);
   return (
     <section className=" body-font">
       <div

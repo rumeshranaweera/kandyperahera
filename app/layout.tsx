@@ -30,7 +30,6 @@ export default function RootLayout({
           <Nav />
 
           <main className="grow">{children}</main>
-
           <Footer />
         </Appcontext>
       </body>
