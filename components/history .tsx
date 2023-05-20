@@ -16,6 +16,8 @@ function Hstory() {
   const [isHistoryModelOpen, setIsHistoryModelOpen] = useState(false);
   const modelRef = useRef<HTMLDivElement>(null);
 
+  const Test = Image;
+
   return (
     <>
       <motion.div className="relative my-10">
@@ -131,7 +133,7 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
       // Clean up the event listener when the component is unmounted
       document.removeEventListener("keydown", handleEscapeKeyPress);
     };
-  }, []);
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -149,15 +151,17 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm"
       onClick={handleOverlayClick}
     >
-      <motion.div className="bg-slate-800 h-4/5 m-2 relative flex flex-col md:flex-col w-full max-w-[1024px] xl:h-[550px] p-4 rounded-lg shadow-lg">
+      <motion.div className="bg-slate-800 group h-4/5 m-2 relative flex flex-col md:flex-col w-full max-w-[1024px] xl:h-[550px] p-4 rounded-lg shadow-lg">
         <button
-          className="absolute z-50 primary-btn top-2 right-2"
+          className="absolute z-50 w-10 h-10 primary-btn top-2 right-2 "
           onClick={() => handleClose()}
         >
-          <GrClose className="" />
+          <GrClose className="duration-300 sm:opacity-20 group-hover:opacity-100 " />
         </button>
         <header className="sticky top-0 left-0 mb-4">
-          <h2 className="text-2xl font-semibold ">History of perahera</h2>
+          <h2 className="text-2xl font-semibold md:text-3xl ">
+            History of perahera
+          </h2>
         </header>
         <div className="flex flex-row overflow-y-scroll md:flex-col">
           <div className="h-full">
