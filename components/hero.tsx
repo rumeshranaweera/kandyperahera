@@ -22,7 +22,7 @@ function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex items-center justify-center h-screen md:max-h-[700px] mb-10 overflow-hidden "
+      className="relative flex items-center justify-center h-screen mb-10 overflow-hidden "
     >
       <motion.div
         initial={{ opacity: 0.1, scale: 1.2, rotate: "-4deg" }}
@@ -73,7 +73,7 @@ function Hero() {
       >
         <BsChevronDoubleDown
           className="font-extrabold animate-bounce"
-          width={40}
+          size={40}
         />
       </motion.div>
       <motion.h6

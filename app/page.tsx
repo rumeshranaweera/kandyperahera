@@ -11,6 +11,12 @@ import ImgAndText from "@/components/imgAndText";
 export default function Home() {
   const [showFullAbout, setShowFullAbout] = useState(false);
 
+  const images = [
+    "https://cdn.pixabay.com/photo/2023/05/15/14/35/cat-7995231__340.jpg",
+    "https://cdn.pixabay.com/photo/2023/05/15/14/20/museum-7995207_640.jpg",
+    "https://cdn.pixabay.com/photo/2023/05/02/19/15/path-7965967_640.jpg",
+  ];
+
   return (
     <main>
       <Hero />
