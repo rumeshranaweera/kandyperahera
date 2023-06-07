@@ -14,6 +14,9 @@ module.exports = {
       backgroundImage: {
         "footer-img": "url('/imgs/footer-bg.png')",
       },
+      backgroundColor: {
+        radial: `background:_radial-gradient(circle,_rgba(2,0,36,0)_55%,_rgba(0,212,255,1)_100%)`,
+      },
     },
   },
   plugins: [],

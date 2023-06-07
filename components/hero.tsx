@@ -1,18 +1,10 @@
 "use client";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { useRef } from "react";
+import Carousel from "./carousel";
 
-const randomval = Math.floor(Math.random() * 7);
-
-const imgUrls = Array.from({ length: 8 }, (_, i) => {
-  return `/imgs/img-${i}.jpg`;
-});
 function Hero() {
-  const imageUrl = imgUrls[randomval];
-  // console.log(imageUrl);
-
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -32,17 +24,9 @@ function Hero() {
         className="absolute inset-0 overflow-hidden"
         property="ture"
       >
-        <Image
-          src={`${imageUrl}`}
-          fill
-          alt="conver image"
-          className="object-cover overflow-hidden"
-          priority
-        />
+        <div className="absolute inset-0 bg-white " />
+        <Carousel />
       </motion.div>
-
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
-      <div className="absolute inset-0 text-center bg-gradient-to-b from-black/50 via-transparent to-black/50"></div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
@@ -51,7 +35,7 @@ function Hero() {
         style={{ y }}
         className={"relative text-5xl sm:text-7xl font-semibold text-center "}
       >
-        <h1 className="inline-block pb-1 text-5xl text-white border-b-2 border-yellow-900/50 ">
+        <h1 className="inline-block pb-1 text-5xl text-white border-b-2 border-yellow-900/50 2xl:text- lg:">
           The Kandy Esala Perahera
         </h1>
         <motion.h4
@@ -69,7 +53,7 @@ function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute left-0 right-0 flex justify-center w-10 h-10 mx-auto bottom-4 "
+        className="absolute left-0 right-0 flex justify-center w-10 h-10 mx-auto bottom-12 "
       >
         <BsChevronDoubleDown
           className="font-extrabold animate-bounce"

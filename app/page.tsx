@@ -4,7 +4,6 @@ import Hero from "../components/hero";
 import History from "../components/history ";
 import { motion } from "framer-motion";
 import Schedule from "../components/schedule";
-import Carousel from "../components/carousel";
 import Offers from "@/components/offers";
 import ImgAndText from "@/components/imgAndText";
 
@@ -78,8 +77,6 @@ export default function Home() {
         />
         <Schedule />
         <Offers />
-
-        {/* <Carousel /> */}
       </div>
     </main>
   );
