@@ -35,7 +35,7 @@ export default function Carousel() {
         className="mySwiper"
       >
         {Array.from({ length: 8 }, (_, i) => (
-          <SwiperSlide>
+          <SwiperSlide key={i}>
             <Image
               src={`/imgs/img-${i}.jpg`}
               alt={`${"img" + i}`}
