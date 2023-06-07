@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,7 +19,8 @@ export default function Carousel() {
       <Swiper
         effect="fade"
         fadeEffect={{ crossFade: false }}
-        spaceBetween={30}
+        longSwipes={false}
+        speed={700}
         centeredSlides={true}
         autoplay={{
           delay: 5500,
@@ -43,7 +43,7 @@ export default function Carousel() {
               loading="lazy"
             />
           </SwiperSlide>
-        ))}
+        )).sort(() => 0.5 - Math.random())}
       </Swiper>
     </div>
   );

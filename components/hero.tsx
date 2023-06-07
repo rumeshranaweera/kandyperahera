@@ -64,11 +64,9 @@ function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ delay: 5 }}
-        className="absolute text-xs right-2 hover:text-yellow-500 bottom-2"
+        className="absolute bottom-0 text-xs right-2 hover:text-yellow-500 md:bottom-2"
       >
-        <a href="https://kandyesalaperahera.com/" target="_blank">
-          images source : kandyesalaperahera.com
-        </a>
+        images source : kandyesalaperahera.com
       </motion.h6>
     </section>
   );
