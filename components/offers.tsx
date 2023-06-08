@@ -19,7 +19,7 @@ const Offers = () => {
           <Offer title="Receive a complimentary souvenir package, including a Kandy Perahera program booklet, traditional Kandyan masks, and other memorabilia" />
           <Offer title="Reserved seating in a prime location to enjoy the Perahera" />
           <Offer title="Special souvenirs and gifts to remember the occasion" />
-          <Offer title="optimal photography opportunities during the Kandy Perahera" />
+          <Offer title="Optimal photography opportunities during the Kandy Perahera" />
         </div>
         <button className="mx-auto primary-btn">Reserve my seat</button>
       </div>
@@ -47,7 +47,7 @@ const Offer = ({ title }: { title: string }) => {
           <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
           <path d="M22 4L12 14.01l-3-3" />
         </motion.svg>
-        <span className="font-medium text-left text-black capitalize title-font">
+        <span className="font-medium text-left text-black title-font">
           {title}
         </span>
       </div>

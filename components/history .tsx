@@ -1,4 +1,4 @@
-import { useGlobalContext } from "@/app/context/appContext";
+import { BsArrowRight } from "react-icons/bs";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import React, {
@@ -78,9 +78,10 @@ function Hstory() {
           </div>
           <button
             onClick={() => setIsHistoryModelOpen(true)}
-            className="absolute left-0 right-0 px-2 mx-auto text-sm text-black capitalize bg-yellow-500 rounded-full w-fit bottom-2 font-canveat hover:cursor-pointer focus:ring-2 focus:ring-black focus:border-none"
+            className="absolute left-0 right-0 px-4 py-2 mx-auto text-sm font-bold text-black capitalize bg-yellow-500 rounded-full w-fit bottom-2 font-canveat hover:cursor-pointer focus:ring-2 focus:ring-black focus:border-none group"
           >
-            continue reading
+            continue reading{" "}
+            <BsArrowRight className="inline-block ml-1 duration-300 group-hover:ml-2" />
           </button>
         </div>
       </motion.div>

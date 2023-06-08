@@ -6,20 +6,15 @@ import { motion } from "framer-motion";
 import Schedule from "../components/schedule";
 import Offers from "@/components/offers";
 import ImgAndText from "@/components/imgAndText";
+import Card from "@/components/card";
 
 export default function Home() {
   const [showFullAbout, setShowFullAbout] = useState(false);
 
-  const images = [
-    "https://cdn.pixabay.com/photo/2023/05/15/14/35/cat-7995231__340.jpg",
-    "https://cdn.pixabay.com/photo/2023/05/15/14/20/museum-7995207_640.jpg",
-    "https://cdn.pixabay.com/photo/2023/05/02/19/15/path-7965967_640.jpg",
-  ];
-
   return (
-    <main>
+    <>
       <Hero />
-      <div className="max-w-4xl px-1 mx-auto text-center ">
+      <div className="max-w-4xl px-1 mx-auto mb-4 text-center">
         {/* intro */}
         <div className="py-2 rounded-lg bg-yellow-500/5">
           <h2 className="my-2 text-4xl">
@@ -77,7 +72,13 @@ export default function Home() {
         />
         <Schedule />
         <Offers />
+        <div className="flex flex-wrap">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
-    </main>
+    </>
   );
 }

@@ -24,7 +24,7 @@ function Hero() {
         className="absolute inset-0 overflow-hidden"
         property="ture"
       >
-        <div className="absolute inset-0 bg-white " />
+        <div className="absolute inset-0 z-10 pointer-events-none select-none radial-gradient" />
         <Carousel />
       </motion.div>
 
@@ -35,7 +35,7 @@ function Hero() {
         style={{ y }}
         className={"relative text-5xl sm:text-7xl font-semibold text-center "}
       >
-        <h1 className="inline-block pb-1 text-5xl text-white border-b-2 border-yellow-900/50 2xl:text- lg:">
+        <h1 className="z-20 inline-block pb-1 text-5xl text-white border-b-2 border-yellow-900/50 2xl:text- lg:">
           The Kandy Esala Perahera
         </h1>
         <motion.h4

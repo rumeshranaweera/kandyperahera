@@ -54,3 +54,12 @@ img::selection {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.radial-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.4) 15%,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}

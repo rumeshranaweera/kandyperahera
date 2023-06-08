@@ -22,7 +22,7 @@
 }
 .swiper-button-next,
 .swiper-button-prev {
-  @apply absolute z-40 hidden p-8 text-yellow-700 md:flex;
+  @apply absolute z-40 hidden p-8 text-yellow-700 duration-300 hover:text-yellow-400 md:flex;
 }
 .swiper-pagination-bullet {
   @apply bg-white bg-opacity-100 bg-blend-multiply;
