@@ -1,12 +1,25 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  darkMode: ["class"],
+  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
       fontFamily: {
         canveat: ["var(--font-canveat)"],
         inter: ["var(--font-inter)"],
@@ -14,10 +27,7 @@ module.exports = {
       backgroundImage: {
         "footer-img": "url('/imgs/footer-bg.png')",
       },
-      backgroundColor: {
-        radial: `background:_radial-gradient(circle,_rgba(2,0,36,0)_55%,_rgba(0,212,255,1)_100%)`,
-      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };

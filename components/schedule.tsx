@@ -1,3 +1,5 @@
+import SectionTitle from "./sectionTitle";
+
 function Schedule() {
   const schedule = [
     {
@@ -45,7 +47,7 @@ function Schedule() {
   ];
   return (
     <div className="w-full ">
-      <h2 className="my-8 text-4xl capitalize">schedule</h2>
+      <SectionTitle title="schedule" />
       {/* top */}
       <div className="grid grid-cols-2 text-3xl font-semibold text-black bg-yellow-500">
         <h3>Event</h3>

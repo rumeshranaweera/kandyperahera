@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
+import SectionTitle from "./sectionTitle";
 
 const Offers = () => {
   return (
     <section className=" body-font">
       <div className="container px-5 py-16 mx-auto">
         <div className="mb-10 text-center">
-          <h2 className="my-2 mb-4 text-4xl font-medium text-center capitalize sm:text-3xl title-font">
-            What we offer
-          </h2>
+          <SectionTitle title="What we offer" />
           <p className="mx-auto text-base leading-relaxed paragraph lg:w-full">
             Secure your spot and enjoy the best views of the Kandy Perahera with
             our reserved seating, ensuring a memorable and hassle-free

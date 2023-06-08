@@ -7,6 +7,8 @@ import Schedule from "../components/schedule";
 import Offers from "@/components/offers";
 import ImgAndText from "@/components/imgAndText";
 import Card from "@/components/card";
+import AccordionSection from "@/components/accordion/accordionSection";
+import SectionTitle from "@/components/sectionTitle";
 
 export default function Home() {
   const [showFullAbout, setShowFullAbout] = useState(false);
@@ -72,12 +74,17 @@ export default function Home() {
         />
         <Schedule />
         <Offers />
-        <div className="flex flex-wrap">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+
+        <div>
+          <SectionTitle title="seats" />
+          <div className="flex flex-wrap">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
         </div>
+        <AccordionSection />
       </div>
     </>
   );

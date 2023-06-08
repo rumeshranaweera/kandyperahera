@@ -9,6 +9,7 @@ import React, {
   useState,
 } from "react";
 import { GrClose } from "react-icons/gr";
+import SectionTitle from "./sectionTitle";
 
 function Hstory() {
   // const { isHistoryOpen, setIsHistoryOpen, historyModelRef } =
@@ -21,7 +22,7 @@ function Hstory() {
   return (
     <>
       <motion.div className="relative my-10">
-        <h2 className="my-8 text-4xl capitalize">History of perahera</h2>
+        <SectionTitle title="History of perahera" />
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 " />
           <div className="relative flex overflow-hidden rounded-lg">
