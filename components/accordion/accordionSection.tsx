@@ -57,7 +57,7 @@ const AccordionSection = () => {
       <Accordion type="single" collapsible>
         {content.map((faq, i) => (
           <AccordionItem key={i} value={`item-${i}`}>
-            <AccordionTrigger className="font-sans text-lg tracking-wide text-slate-100">
+            <AccordionTrigger className="font-sans text-lg tracking-wide text-left text-slate-100">
               {faq.trigger}
             </AccordionTrigger>
             <AccordionContent>{faq.content}</AccordionContent>

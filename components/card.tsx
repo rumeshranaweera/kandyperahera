@@ -20,8 +20,8 @@ const Card = () => {
           <div className="">
             <div className="flex mx-2 mt-4 ">
               <div className="flex items-center grow">
-                <div className="relative">
-                  <h4 className="text-lg font-medium text-left text-white line-clamp-1 md:text-2xl">
+                <div className="relative w-full text-left">
+                  <h4 className="text-2xl font-medium text-white line-clamp-1 md:text-3xl">
                     Soul food balcony
                   </h4>
                   <p className="mt-2 text-sm text-white line-clamp-1">
