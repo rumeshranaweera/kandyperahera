@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
-const Card = () => {
+const Card = ({ seats }: { seats: number }) => {
   return (
     <motion.div
-      whileInView={{ y: 0 }}
-      initial={{ y: 10 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      initial={{ y: 10, opacity: 0.9 }}
       className="relative w-full max-w-sm m-1 mx-auto border-2 border-yellow-400 rounded-lg group"
     >
       <a
@@ -24,9 +26,14 @@ const Card = () => {
                 blurDataURL="/seat-0.webp"
               />
             </div>
-            <span className="absolute top-0 left-0 z-10 inline-flex px-3 py-2 mt-3 ml-3 text-sm font-bold duration-500 bg-red-700 rounded-full select-none lg:-translate-y-24 text-slate-200 group-hover:translate-y-0">
+            <span
+              className={twMerge(
+                `absolute top-0 left-0 z-10 inline-flex px-3 py-2 mt-3 ml-3 text-sm font-bold duration-500 bg-yellow-500 rounded-full select-none lg:-translate-y-24 text-black group-hover:translate-y-0`,
+                seats < 10 && "bg-red-700 text-slate-200"
+              )}
+            >
               {" "}
-              10 seats left{" "}
+              {seats} seats left{" "}
             </span>
           </div>
           <div className="">

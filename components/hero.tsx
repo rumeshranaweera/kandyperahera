@@ -35,7 +35,7 @@ function Hero() {
         style={{ y }}
         className={"relative text-center"}
       >
-        <h1 className="z-20 inline-block pb-2 text-5xl font-bold text-transparent border-b-2 bg-gradient-to-b bg-clip-text from-slate-50 to-amber-500 text font-inter md:text-7xl border-yellow-900/50 2xl:text- lg:">
+        <h1 className="z-20 inline-block pb-2 text-5xl font-bold text-transparent border-b-2 bg-gradient-to-b bg-clip-text from-yellow-300 to-amber-500 text font-inter md:text-7xl border-yellow-900/50 2xl:text- lg:">
           The Kandy <span className="inline-block">Esala Perahera</span>
         </h1>
         <motion.h4
@@ -64,7 +64,7 @@ function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ delay: 5 }}
-        className="absolute bottom-0 text-xs right-2 hover:text-yellow-500 md:bottom-2"
+        className="absolute bottom-0 text-[0.6rem] md:text-xs text-opacity-25 italic right-2 hover:text-yellow-500 md:bottom-2"
       >
         images source : kandyesalaperahera.com
       </motion.h6>

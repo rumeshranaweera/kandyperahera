@@ -57,7 +57,7 @@ export default function Home() {
             </motion.p>
             <motion.span
               layout="position"
-              className="inline-block px-2 text-sm text-black capitalize bg-yellow-500 rounded-full font-canveat hover:cursor-pointer md:hidden"
+              className="inline-block !py-2 cursor-pointer primary-btn md:hidden"
               onClick={() => setShowFullAbout(!showFullAbout)}
             >
               {showFullAbout ? "show less" : "continue reading"}
@@ -73,10 +73,10 @@ export default function Home() {
         <div>
           <SectionTitle title="seats" />
           <div className="flex flex-wrap">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card seats={5} />
+            <Card seats={13} />
+            <Card seats={8} />
+            <Card seats={20} />
           </div>
         </div>
         <AccordionSection />

@@ -1,4 +1,4 @@
-import { BsArrowRight } from "react-icons/bs";
+import { FiArrowRightCircle } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import React, {
@@ -82,7 +82,10 @@ function Hstory() {
             className="absolute left-0 right-0 mx-auto italic w-fit bottom-2 primary-btn hover:cursor-pointer focus:ring-2 focus:ring-black focus:border-none group"
           >
             continue reading{" "}
-            <BsArrowRight className="inline-block ml-1 duration-300 group-hover:ml-2" />
+            <FiArrowRightCircle
+              size={"1.4rem"}
+              className="inline-block ml-1 duration-300 group-hover:ml-2"
+            />
           </button>
         </div>
       </motion.div>
