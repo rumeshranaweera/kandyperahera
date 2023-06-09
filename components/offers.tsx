@@ -3,8 +3,8 @@ import SectionTitle from "./sectionTitle";
 
 const Offers = () => {
   return (
-    <section className=" body-font">
-      <div className="container px-5 py-16 mx-auto">
+    <>
+      <div className="w-full py-16 ">
         <div className="mb-10 text-center">
           <SectionTitle title="What we offer" />
           <p className="mx-auto text-base leading-relaxed paragraph lg:w-full">
@@ -22,7 +22,7 @@ const Offers = () => {
         </div>
         <button className="mx-auto primary-btn">Reserve my seat</button>
       </div>
-    </section>
+    </>
   );
 };
 
