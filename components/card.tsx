@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Card = () => {
   return (
-    <div className="relative w-full max-w-sm m-1 mx-auto border-2 border-yellow-400 rounded-lg group">
+    <motion.div
+      whileInView={{ y: 0 }}
+      initial={{ y: 10 }}
+      className="relative w-full max-w-sm m-1 mx-auto border-2 border-yellow-400 rounded-lg group"
+    >
       <a
         href="#"
         className="relative inline-block w-full transition-transform duration-300 ease-in-out transform"
@@ -51,7 +56,7 @@ const Card = () => {
           </div>
         </div>
       </a>
-    </div>
+    </motion.div>
   );
 };
 

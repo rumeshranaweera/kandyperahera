@@ -4,16 +4,16 @@ import SectionTitle from "./sectionTitle";
 const Offers = () => {
   return (
     <>
-      <div className="w-full py-16 ">
+      <div className="py-8">
         <div className="mb-10 text-center">
           <SectionTitle title="What we offer" />
-          <p className="mx-auto text-base leading-relaxed paragraph lg:w-full">
+          <p className="mx-auto text-base leading-relaxed paragraph">
             Secure your spot and enjoy the best views of the Kandy Perahera with
             our reserved seating, ensuring a memorable and hassle-free
             experience.
           </p>
         </div>
-        <div className="flex flex-wrap -mx-2 lg:w-4/5 sm:mx-auto sm:mb-2">
+        <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2">
           {/* offer goes here */}
           <Offer title="Receive a complimentary souvenir package, including a Kandy Perahera program booklet, traditional Kandyan masks, and other memorabilia" />
           <Offer title="Reserved seating in a prime location to enjoy the Perahera" />
