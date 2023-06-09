@@ -41,6 +41,9 @@ export default function Carousel() {
               alt={`${"img" + i}`}
               fill
               loading="lazy"
+              placeholder="blur"
+              blurDataURL={`/imgs/img-${i}.jpg`}
+              className="object-cover"
             />
           </SwiperSlide>
         )).sort(() => 0.5 - Math.random())}

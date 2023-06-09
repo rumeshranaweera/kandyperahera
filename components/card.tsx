@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Card = () => {
   return (
-    <div className="relative w-full max-w-sm m-1 mx-auto border-2 border-yellow-400 rounded-lg">
+    <div className="relative w-full max-w-sm m-1 mx-auto border-2 border-yellow-400 rounded-lg group">
       <a
         href="#"
         className="relative inline-block w-full transition-transform duration-300 ease-in-out transform"
@@ -10,12 +10,19 @@ const Card = () => {
         <div className="rounded-lg">
           <div className="relative flex justify-center overflow-hidden rounded-lg h-60">
             <div className="w-full transition-transform duration-500 ease-in-out transform hover:scale-110">
-              <Image src="/seat-0.webp" fill loading="lazy" alt="" />
+              <Image
+                src="/seat-0.webp"
+                fill
+                loading="lazy"
+                alt="seat-0"
+                placeholder="blur"
+                blurDataURL="/seat-0.webp"
+              />
             </div>
-            {/* <span className="absolute top-0 left-0 z-10 inline-flex px-3 py-2 mt-3 ml-3 text-sm font-medium text-white bg-red-500 rounded-lg select-none">
+            <span className="absolute top-0 left-0 z-10 inline-flex px-3 py-2 mt-3 ml-3 text-sm font-bold duration-500 bg-red-700 rounded-full select-none lg:-translate-y-24 text-slate-200 group-hover:translate-y-0">
               {" "}
-              Featured{" "}
-            </span> */}
+              10 seats left{" "}
+            </span>
           </div>
           <div className="">
             <div className="flex mx-2 mt-4 ">
@@ -30,7 +37,7 @@ const Card = () => {
                 </div>
               </div>
               <div className="flex items-center justify-end">
-                <p className="inline-block px-4 py-2 font-semibold leading-tight text-yellow-400 text-primary whitespace-nowrap rounded-xl bg-yellow-400/10">
+                <p className="inline-block px-4 py-2 font-semibold leading-tight text-yellow-400 rounded-full text-primary whitespace-nowrap bg-yellow-400/10">
                   <span className="text-lg uppercase"> $ </span>
                   <span className="text-lg">100</span>
                 </p>

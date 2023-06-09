@@ -29,17 +29,17 @@ function Hero() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
         style={{ y }}
-        className={"relative text-5xl sm:text-7xl font-semibold text-center "}
+        className={"relative text-center"}
       >
-        <h1 className="z-20 inline-block pb-1 text-5xl text-white border-b-2 border-yellow-900/50 2xl:text- lg:">
-          The Kandy Esala Perahera
+        <h1 className="z-20 inline-block pb-2 text-5xl font-bold text-transparent border-b-2 bg-gradient-to-b bg-clip-text from-slate-50 to-amber-500 text font-inter md:text-7xl border-yellow-900/50 2xl:text- lg:">
+          The Kandy <span className="inline-block">Esala Perahera</span>
         </h1>
         <motion.h4
-          className="max-w-2xl text-2xl text-white"
+          className="max-w-2xl mx-auto text-2xl font-semibold text-white font-inter"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.7 }}

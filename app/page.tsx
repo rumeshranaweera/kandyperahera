@@ -9,6 +9,7 @@ import ImgAndText from "@/components/imgAndText";
 import Card from "@/components/card";
 import AccordionSection from "@/components/accordion/accordionSection";
 import SectionTitle from "@/components/sectionTitle";
+import Image from "next/image";
 
 export default function Home() {
   const [showFullAbout, setShowFullAbout] = useState(false);
@@ -66,12 +67,6 @@ export default function Home() {
         </div>
         {/* history section */}
         <History />
-        <ImgAndText swipOrder paragraph="test para" title="test title" />
-        <ImgAndText
-          paragraph="hello helloo test"
-          title="test title 2"
-          buttonText="test button"
-        />
         <Schedule />
         <Offers />
 
