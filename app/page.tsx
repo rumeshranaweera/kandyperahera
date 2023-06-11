@@ -70,8 +70,8 @@ export default function Home() {
         <Schedule />
         <Offers />
 
-        <div id="seats" className="snap-y scroll-pb-8">
-          <SectionTitle title="seats" className="snap-start" />
+        <div id="seats">
+          <SectionTitle title="seats" />
           <div className="flex flex-wrap">
             <Card seats={5} />
             <Card seats={13} />
