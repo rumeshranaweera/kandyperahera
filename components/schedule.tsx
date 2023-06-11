@@ -63,7 +63,9 @@ function Schedule() {
             >
               <p>{event.event}</p>
               <p>
-                {event.date} August {new Date().getFullYear().toString()}
+                <a href="#seats">
+                  {event.date} August {new Date().getFullYear().toString()}
+                </a>
               </p>
             </div>
           );

@@ -14,7 +14,7 @@ function Nav() {
         {/* right */}
         <div>
           <motion.button whileTap={{ scale: 1.1 }} className="primary-btn">
-            Tickets
+            <a href="#seats">Tickets</a>
           </motion.button>
         </div>
       </nav>

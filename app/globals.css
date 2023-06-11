@@ -6,7 +6,7 @@ body,
 html {
   @apply scroll-smooth;
   scrollbar-width: thin;
-  scrollbar-color: #0f172a;
+  scrollbar-color: rgba(250 204 21 0.5);
 }
 
 ::-webkit-scrollbar {
