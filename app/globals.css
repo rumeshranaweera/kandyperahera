@@ -4,7 +4,7 @@
 
 body,
 html {
-  @apply scroll-smooth scroll-pt-20;
+  @apply outline-none scroll-smooth scroll-pt-20;
   scrollbar-width: thin;
   scrollbar-color: rgba(250, 204, 21, 0.5);
 }

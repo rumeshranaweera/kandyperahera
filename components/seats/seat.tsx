@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-const Card = ({ seats }: { seats: number }) => {
+const Seat = ({ seats }: { seats: number }) => {
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
@@ -67,4 +67,4 @@ const Card = ({ seats }: { seats: number }) => {
   );
 };
 
-export default Card;
+export default Seat;

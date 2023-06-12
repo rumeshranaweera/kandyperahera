@@ -1,3 +1,4 @@
+"use client";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
