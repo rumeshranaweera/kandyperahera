@@ -31,7 +31,7 @@ const Seat = ({
         <div className="flex items-end">
           <HiMapPin size={28} className="inline-block text-yellow-400 " />{" "}
           <p className="inline-block text-xl font-bold capitalize">
-            Queens' corrido
+            Queens corrido
           </p>
         </div>
         <div className="flex items-end">
