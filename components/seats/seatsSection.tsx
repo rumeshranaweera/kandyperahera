@@ -33,7 +33,7 @@ function AnimatedTabs() {
   let [activeTab, setActiveTab] = useState(daysList[0]);
 
   return (
-    <div className="flex flex-wrap items-center justify-center my-3 space-x-1 space-y-1">
+    <div className="flex flex-wrap justify-center my-3">
       {daysList.map((day) => (
         <motion.button
           animate={{ color: activeTab === day ? "black" : "" }}
@@ -45,7 +45,7 @@ function AnimatedTabs() {
           key={day}
           onClick={() => setActiveTab(day)}
           className={twMerge(
-            `relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-yellow-700 transition focus-visible:outline-2 ${
+            `relative rounded-full px-3 py-1.5 text-sm font-bold text-white mx-1 my-1 outline-yellow-700 transition focus-visible:outline-2 ${
               activeTab === day
                 ? "text-black"
                 : "hover:text-yellow-400/60 bg-yellow-400/10"
