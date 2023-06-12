@@ -13,11 +13,11 @@ const SeatsSection = () => {
       <SectionTitle title="seats" />
       {/* <ComboboxDemo /> */}
       <AnimatedTabs />
-      <div className="flex flex-wrap">
-        <Seat seats={5} />
-        <Seat seats={13} />
-        <Seat seats={8} />
-        <Seat seats={20} />
+      <div className="flex flex-wrap gap-1">
+        <Seat seats={5} title="21st randoli perehera" price={49} />
+        <Seat seats={5} title="22nd randoli perehera" price={59} />
+        <Seat seats={5} title="21st randoli perehera" price={49} />
+        <Seat seats={5} title="22nd randoli perehera" price={59} />
       </div>
     </div>
   );
@@ -45,7 +45,7 @@ function AnimatedTabs() {
           key={day}
           onClick={() => setActiveTab(day)}
           className={twMerge(
-            `relative rounded-full px-3 py-1.5 text-sm font-bold text-white mx-1 my-1 outline-yellow-700 transition focus-visible:outline-2 ${
+            `relative rounded-full px-3 py-1.5  text-base md:text-lg font-bold text-white mx-1 my-1 outline-yellow-700 transition focus-visible:outline-2 ${
               activeTab === day
                 ? "text-black"
                 : "hover:text-yellow-400/60 bg-yellow-400/10"
