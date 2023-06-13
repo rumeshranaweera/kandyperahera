@@ -20,7 +20,6 @@ const Offers = () => {
           <Offer title="Special souvenirs and gifts to remember the occasion" />
           <Offer title="Optimal photography opportunities during the Kandy Perahera" />
         </div>
-        <button className="mx-auto primary-btn">Reserve my seat</button>
       </div>
     </>
   );

@@ -8,10 +8,12 @@ const Seat = ({
   seats,
   title,
   price,
+  place,
 }: {
   seats: number;
   title: string;
   price: number;
+  place: string;
 }) => {
   return (
     <motion.div
@@ -30,9 +32,7 @@ const Seat = ({
       <div className="py-2 space-y-1">
         <div className="flex items-end">
           <HiMapPin size={28} className="inline-block text-yellow-400 " />{" "}
-          <p className="inline-block text-xl font-bold capitalize">
-            Queens corrido
-          </p>
+          <p className="inline-block text-xl font-bold capitalize">{place}</p>
         </div>
         <div className="flex items-end">
           <HiClock size={28} className="inline-block text-yellow-400 " />{" "}

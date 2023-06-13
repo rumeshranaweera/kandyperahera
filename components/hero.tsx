@@ -33,7 +33,7 @@ function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
         style={{ y }}
-        className={"relative text-center"}
+        className={"relative text-center pointer-events-none"}
       >
         <h1 className="z-20 inline-block pb-2 text-5xl font-bold text-transparent border-b-2 bg-gradient-to-b bg-clip-text from-yellow-300 to-amber-500 text font-inter md:text-7xl border-yellow-900/50 2xl:text- lg:">
           The Kandy <span className="inline-block">Esala Perahera</span>

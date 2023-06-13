@@ -13,9 +13,11 @@ function Nav() {
         </div>
         {/* right */}
         <div>
-          <motion.button whileTap={{ scale: 1.1 }} className="primary-btn">
-            <a href="#seats">Tickets</a>
-          </motion.button>
+          <a href="#seats">
+            <motion.button whileTap={{ scale: 1.1 }} className="primary-btn">
+              Tickets
+            </motion.button>
+          </a>
         </div>
       </nav>
     </header>

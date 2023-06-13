@@ -7,17 +7,36 @@ const daysList = [
   ...new Set(scheduleList.map((item) => item.date)),
 ];
 const SeatsSection = () => {
-  console.log(daysList);
   return (
     <div id="seats">
       <SectionTitle title="seats" />
       {/* <ComboboxDemo /> */}
       <AnimatedTabs />
       <div className="flex flex-wrap gap-1">
-        <Seat seats={5} title="21st randoli perehera" price={49} />
-        <Seat seats={5} title="22nd randoli perehera" price={59} />
-        <Seat seats={5} title="21st randoli perehera" price={49} />
-        <Seat seats={5} title="22nd randoli perehera" price={59} />
+        <Seat
+          seats={5}
+          title="21st randoli perehera"
+          price={49}
+          place="Quenns corridor"
+        />
+        <Seat
+          seats={5}
+          title="22nd randoli perehera"
+          price={59}
+          place="nimali shopping center"
+        />
+        <Seat
+          seats={5}
+          title="23rd randoli perehera"
+          price={49}
+          place="------"
+        />
+        <Seat
+          seats={5}
+          title="24th randoli perehera"
+          price={59}
+          place="------"
+        />
       </div>
     </div>
   );
