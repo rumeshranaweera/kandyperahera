@@ -1,6 +1,10 @@
+"use client";
+import { scheduleList } from "../schedule";
 import SectionTitle from "../sectionTitle";
 import Seat from "./seat";
-import { scheduleList } from "../schedule";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const daysList = [
   //@ts-ignore
@@ -14,28 +18,28 @@ const SeatsSection = () => {
       <AnimatedTabs />
       <div className="flex flex-wrap gap-1">
         <Seat
-          seats={5}
-          title="21st randoli perehera"
-          price={49}
+          seats={75}
+          title="Esala Perahera 2023"
+          price={{ row1: 85, row2: 50, row3: 45 }}
           place="Quenns corridor"
         />
         <Seat
-          seats={5}
-          title="22nd randoli perehera"
-          price={59}
+          seats={50}
+          title="Esala Perahera 2023"
+          price={{ row1: 59, row2: 49, row3: 45 }}
           place="nimali shopping center"
         />
         <Seat
-          seats={5}
-          title="23rd randoli perehera"
-          price={49}
-          place="------"
+          seats={75}
+          title="Esala Perahera 2023"
+          price={{ row1: 59, row2: 49, row3: 45 }}
+          place="Aroma cafe"
         />
         <Seat
-          seats={5}
-          title="24th randoli perehera"
-          price={59}
-          place="------"
+          seats={60}
+          title="Esala Perahera 2023"
+          price={{ row1: 59, row2: 49, row3: 45 }}
+          place="Outside Balaji "
         />
       </div>
     </div>
@@ -43,10 +47,6 @@ const SeatsSection = () => {
 };
 
 export default SeatsSection;
-
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { twMerge } from "tailwind-merge";
 
 function AnimatedTabs() {
   let [activeTab, setActiveTab] = useState(daysList[0]);

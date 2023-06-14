@@ -1,7 +1,8 @@
 "use client";
-
-import { motion } from "framer-motion";
 import Logo from "./logos";
+import { HiShoppingBag } from "react-icons/hi";
+import { twMerge } from "tailwind-merge";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Nav() {
   return (
@@ -12,13 +13,30 @@ function Nav() {
           <Logo logoAnimation />
         </div>
         {/* right */}
-        <div>
-          <a href="#seats">
-            <motion.button whileTap={{ scale: 1.1 }} className="primary-btn">
-              Tickets
-            </motion.button>
-          </a>
-        </div>
+        <AnimatePresence>
+          <div className="flex gap-2">
+            <a href="#seats">
+              <button className="primary-btn">Tickets</button>
+            </a>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className={twMerge(
+                "relative "
+                // orderList.length <= 0 && "hidden"
+              )}
+            >
+              <HiShoppingBag
+                size={40}
+                className="cursor-pointer hover:text-yellow-400"
+              />
+              <span className="absolute top-0 right-0 px-1 text-xs font-bold text-black bg-yellow-400 rounded-full pointer-events-none md:-right-1 md:px-2 md:text-sm">
+                3
+              </span>
+            </motion.div>
+          </div>
+        </AnimatePresence>
       </nav>
     </header>
   );

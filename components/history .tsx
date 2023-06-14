@@ -2,23 +2,12 @@
 import { FiArrowRightCircle } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import React, {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useState } from "react";
 import { GrClose } from "react-icons/gr";
 import SectionTitle from "./sectionTitle";
 
 function Hstory() {
-  // const { isHistoryOpen, setIsHistoryOpen, historyModelRef } =
-  //   useGlobalContext();
   const [isHistoryModelOpen, setIsHistoryModelOpen] = useState(false);
-  const modelRef = useRef<HTMLDivElement>(null);
-
-  const Test = Image;
 
   return (
     <>

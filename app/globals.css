@@ -32,7 +32,7 @@ h6 {
 }
 
 .primary-btn {
-  @apply h-10 px-3 py-1 italic font-bold text-black capitalize bg-yellow-500 rounded-full md:tracking-wide font-inter hover:bg-yellow-600;
+  @apply h-10 px-3 py-1 italic font-bold text-black capitalize bg-yellow-400 rounded-full md:tracking-wide font-inter hover:bg-yellow-600;
 }
 .paragraph {
   @apply text-xl font-semibold;

@@ -26,7 +26,6 @@ export default function RootLayout({
         className={`${canveat.variable} ${inter.className} font-inter bg-slate-900 min-h-screen relative text-slate-100 flex flex-col`}
       >
         <Nav />
-
         <main className="grow">{children}</main>
         <Footer />
       </body>

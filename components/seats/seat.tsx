@@ -1,8 +1,9 @@
+"use  client";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { twMerge } from "tailwind-merge";
 import { HiClock, HiMapPin } from "react-icons/hi2";
 import { FaChair } from "react-icons/fa";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const Seat = ({
   seats,
@@ -12,9 +13,13 @@ const Seat = ({
 }: {
   seats: number;
   title: string;
-  price: number;
+  price: { row1: number; row2: number; row3: number };
   place: string;
 }) => {
+  const [selectedRow, setSelectedRow] = useState<"row1" | "row2" | "row3">(
+    "row1"
+  );
+  console.log(selectedRow);
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
@@ -25,7 +30,7 @@ const Seat = ({
       <div className="relative grid min-w-full grid-cols-4 pb-1 text-3xl font-extrabold border-b-4 border-yellow-400">
         <h3 className="col-span-3">{title}</h3>
         <div className="flex items-end justify-center h-16 text-black -translate-y-4 rounded-b-lg bg-gradient-to-t from-yellow-400 from-70%">
-          ${price}
+          ${price[selectedRow]}
         </div>
       </div>
       {/* bottom */}
@@ -40,7 +45,21 @@ const Seat = ({
         </div>
         <div className="flex items-end">
           <FaChair size={28} className="inline-block text-yellow-400 " />{" "}
-          <p className="inline-block text-xl font-bold capitalize">1st Row </p>
+          <p className="inline-block text-xl font-bold capitalize">
+            {Object.keys(price).map((num) => (
+              <span
+                key={num}
+                onClick={() => setSelectedRow(num as typeof selectedRow)}
+                className={twMerge(
+                  "px-3 py-1 ml-1 transition-colors bg-yellow-400/10 rounded-full bgye cursor-pointer",
+                  selectedRow === num && "bg-yellow-400 text-black"
+                )}
+              >
+                {num.at(-1)}
+              </span>
+            ))}{" "}
+            Row{" "}
+          </p>
         </div>
       </div>
     </motion.div>

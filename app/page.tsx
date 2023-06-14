@@ -1,4 +1,3 @@
-"use client";
 import Hero from "../components/hero";
 import History from "../components/history ";
 import Schedule from "../components/schedule";
