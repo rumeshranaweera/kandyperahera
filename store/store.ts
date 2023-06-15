@@ -1,15 +1,15 @@
 import { create } from "zustand";
 
 type Store = {
-  orderList: number[];
-  addOrder: (item: number) => void;
+  orderList: object[];
+  addOrder: (item: object) => void;
 };
 
 export const useStore = create<Store>((set) => ({
-  orderList: [1],
-  addOrder: (item: number) =>
+  orderList: [],
+  addOrder: (item) =>
     set((state) => ({ orderList: [...state.orderList, item] })),
 }));
 
-export const addToList = (newList: number[]) =>
-  useStore.setState({ orderList: newList });
+// export const addToList = (newList: number[]) =>
+//   useStore.setState({ orderList: newList });

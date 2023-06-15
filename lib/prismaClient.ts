@@ -5,16 +5,16 @@ const prisma = new PrismaClient();
 
 export async function client() {
   // ... you will write your Prisma Client queries here
-  return prisma.day.createMany({ data: [{ date: 27 }] });
+  return prisma.day.create({ data: { date: 2 } });
 }
 
-client()
-  .then(async (data) => {
-    console.log(data);
-  })
-  .catch(async (e) => {
-    console.error(e);
-
-    process.exit(1);
-  })
-  .finally(async () => await prisma.$disconnect());
+// client()
+//   .then(async (data) => {
+//     console.log(data);
+//   })
+//   .catch(async (e) => {
+//     console.error(e);
+//
+//     process.exit(1);
+//   })
+//   .finally(async () => await prisma.$disconnect());

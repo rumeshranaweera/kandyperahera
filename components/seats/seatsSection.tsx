@@ -1,46 +1,45 @@
 "use client";
-import { scheduleList } from "../schedule";
 import SectionTitle from "../sectionTitle";
 import Seat from "./seat";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { list } from "@/public/ticketsDetails";
 
-const daysList = [
-  //@ts-ignore
-  ...new Set(scheduleList.map((item) => item.date)),
+type ListType = {
+  categoryName: string;
+  places: {
+    placeName: string;
+    availableDays: number[];
+  };
+};
+const categoryList = [
+  { title: "21st-24th kubal perahera", days: [21, 22, 23, 24] },
+  { title: "final kubal perahera", days: [25] },
+  { title: "26th-29th RANDOLI PERAHERA", days: [26, 27, 28] },
+  { title: "FINAL RANDOLI PERAHERA", days: [29] },
+  { title: "DAY PERAHERA", days: [30] },
 ];
+
 const SeatsSection = () => {
+  let [activeTab, setActiveTab] = useState(categoryList[0].title);
+  const [filterdSeats, setFilterdSeats] = useState<any[]>([]);
+
+  useEffect(() => {
+    setFilterdSeats(list.filter((l) => l.categoryName === activeTab)[0].places);
+  }, [activeTab]);
+  console.log(filterdSeats);
+
   return (
     <div id="seats">
       <SectionTitle title="seats" />
-      {/* <ComboboxDemo /> */}
-      <AnimatedTabs />
+      <AnimatedTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="flex flex-wrap gap-1">
-        <Seat
-          seats={75}
-          title="Esala Perahera 2023"
-          price={{ row1: 85, row2: 50, row3: 45 }}
-          place="Quenns corridor"
-        />
-        <Seat
-          seats={50}
-          title="Esala Perahera 2023"
-          price={{ row1: 59, row2: 49, row3: 45 }}
-          place="nimali shopping center"
-        />
-        <Seat
-          seats={75}
-          title="Esala Perahera 2023"
-          price={{ row1: 59, row2: 49, row3: 45 }}
-          place="Aroma cafe"
-        />
-        <Seat
-          seats={60}
-          title="Esala Perahera 2023"
-          price={{ row1: 59, row2: 49, row3: 45 }}
-          place="Outside Balaji "
-        />
+        {filterdSeats.map(
+          (item: { placeName: string; availableDays: number[] }) => {
+            return <Seat itemData={item} />;
+          }
+        )}
       </div>
     </div>
   );
@@ -48,24 +47,28 @@ const SeatsSection = () => {
 
 export default SeatsSection;
 
-function AnimatedTabs() {
-  let [activeTab, setActiveTab] = useState(daysList[0]);
-
+function AnimatedTabs({
+  activeTab,
+  setActiveTab,
+}: {
+  activeTab: string;
+  setActiveTab: Function;
+}) {
   return (
     <div className="flex flex-wrap justify-center my-3">
-      {daysList.map((day) => (
+      {categoryList.map((day) => (
         <motion.button
-          animate={{ color: activeTab === day ? "black" : "" }}
+          animate={{ color: activeTab === day.title ? "black" : "" }}
           transition={{
             color: {
-              delay: activeTab === day ? 0.4 : 0,
+              delay: activeTab === day.title ? 0.4 : 0,
             },
           }}
-          key={day}
-          onClick={() => setActiveTab(day)}
+          key={day.title}
+          onClick={() => setActiveTab(day.title)}
           className={twMerge(
-            `relative rounded-full px-3 py-1.5  text-base md:text-lg font-bold text-white mx-1 my-1 outline-yellow-700 transition focus-visible:outline-2 ${
-              activeTab === day
+            `relative capitalize rounded-full px-3 py-1.5  text-base md:text-lg font-bold text-white mx-1 my-1 outline-yellow-700 transition focus-visible:outline-2 ${
+              activeTab === day.title
                 ? "text-black"
                 : "hover:text-yellow-400/60 bg-yellow-400/10"
             } `
@@ -74,7 +77,7 @@ function AnimatedTabs() {
             WebkitTapHighlightColor: "transparent",
           }}
         >
-          {activeTab === day && (
+          {activeTab === day.title && (
             <motion.span
               layoutId="bubble"
               className="absolute inset-0 bg-yellow-400 -z-10"
@@ -82,7 +85,7 @@ function AnimatedTabs() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             />
           )}
-          {day}
+          {day.title}
         </motion.button>
       ))}
     </div>
