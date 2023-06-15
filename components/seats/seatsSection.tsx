@@ -4,7 +4,7 @@ import Seat from "./seat";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { list } from "@/public/ticketsDetails";
+import { list, placeNames } from "@/public/ticketsDetails";
 
 type ListType = {
   categoryName: string;
@@ -36,8 +36,8 @@ const SeatsSection = () => {
       <AnimatedTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="flex flex-wrap gap-1">
         {filterdSeats.map(
-          (item: { placeName: string; availableDays: number[] }) => {
-            return <Seat itemData={item} />;
+          (item: { placeName: string; availableDays: number[] }, i) => {
+            return <Seat key={i} itemData={item} />;
           }
         )}
       </div>
