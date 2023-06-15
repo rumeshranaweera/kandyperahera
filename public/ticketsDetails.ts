@@ -59,8 +59,6 @@ export const list = [
   {
     categoryName: "FINAL RANDOLI PERAHERA",
     places: [
-      { placeName: "Balaji Outside", availableDays: [26, 27] },
-      { placeName: "Colombo str.", availableDays: [26] },
       { placeName: "queens corridor", availableDays: [29] },
       { placeName: "swarnamahal", availableDays: [29] },
       { placeName: "HNB", availableDays: [29] },
