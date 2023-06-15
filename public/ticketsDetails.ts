@@ -51,24 +51,79 @@ export const list = [
     places: [
       { placeName: "Balaji Outside", availableDays: [26, 27] },
       { placeName: "Colombo str.", availableDays: [26] },
-      { placeName: "queens corridor", availableDays: [28] },
-      { placeName: "swarnamahal", availableDays: [28] },
-      { placeName: "HNB", availableDays: [28] },
+      { placeName: "queens corridor", availableDays: [28, 29] },
+      { placeName: "swarnamahal", availableDays: [28, 29] },
+      { placeName: "HNB", availableDays: [28, 29] },
     ],
   },
   {
     categoryName: "FINAL RANDOLI PERAHERA",
     places: [
-      { placeName: "queens corridor", availableDays: [29] },
-      { placeName: "swarnamahal", availableDays: [29] },
-      { placeName: "HNB", availableDays: [29] },
+      { placeName: "Nimali shopping center", availableDays: [30] },
+      { placeName: "Flower shop", availableDays: [30] },
     ],
   },
   {
     categoryName: "DAY PERAHERA",
     places: [
-      { placeName: "Nimali shopping center", availableDays: [30] },
-      { placeName: "Flower shop", availableDays: [30] },
+      { placeName: "not set", availableDays: [31] },
+      { placeName: "not set", availableDays: [31] },
+    ],
+  },
+];
+
+export const easyList = [
+  {
+    categoryName: "21st-24th kubal perahera",
+    palces: [
+      { title: "21st kubal perahera", placeName: "Balaji Outside" },
+      { title: "21st kubal perahera", placeName: "Juice bar" },
+      { title: "22nd kubal perahera", placeName: "Balaji Outside" },
+      { title: "22nd kubal perahera", placeName: "Juice Bar" },
+      { title: "23rd kubal perahera", placeName: "Balaji Outside" },
+      { title: "23rd kubal perahera", placeName: "Juice Bar" },
+      { title: "24th kubal perahera", placeName: "Jayawi" },
+    ],
+  },
+  {
+    categoryName: "final kubal perahera",
+    palces: [
+      { title: "25th Final kubal perahera", placeName: "Queens corridor" },
+      { title: "25th Final kubal perahera", placeName: "swarnamahal" },
+      { title: "25th Final kubal perahera", placeName: "HNB" },
+    ],
+  },
+  {
+    categoryName: "26th-29th RANDOLI PERAHERA",
+    palces: [
+      { title: "26th Randoli perahera", placeName: "Balaji Outside" },
+      { title: "26th Randoli perahera", placeName: "Colombo str." },
+      { title: "27th Randoli perahera", placeName: "Balaji Outside" },
+      { title: "28th Randoli perahera", placeName: "queens corridor" },
+      { title: "28th Randoli perahera", placeName: "swarnamahal" },
+      { title: "28th Randoli perahera", placeName: "HNB" },
+      { title: "29th Randoli perahera", placeName: "queens corridor" },
+      { title: "29th Randoli perahera", placeName: "swarnamahal" },
+    ],
+  },
+  {
+    categoryName: "FINAL RANDOLI PERAHERA",
+    palces: [
+      {
+        title: "30th Final Randoli perahera",
+        placeName: "Nimali shopping center",
+      },
+      { title: "30th Final Randoli perahera", placeName: "Flower shop" },
+    ],
+  },
+  {
+    categoryName: "DAY PERAHERA",
+    palces: [
+      {
+        title: "Day perahera",
+        placeName: "---",
+      },
+      { title: "Day perahera", placeName: "-" },
     ],
   },
 ];

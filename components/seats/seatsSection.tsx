@@ -4,14 +4,22 @@ import Seat from "./seat";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { list, placeNames } from "@/public/ticketsDetails";
+import { list, placeNames, easyList } from "@/public/ticketsDetails";
 
-type ListType = {
+// type ListType = {
+//   categoryName: string;
+//   places: {
+//     placeName: string;
+//     availableDays: number[];
+//   };
+// };
+
+type EasyListType = {
   categoryName: string;
-  places: {
+  palces: {
+    title: string;
     placeName: string;
-    availableDays: number[];
-  };
+  }[];
 };
 const categoryList = [
   { title: "21st-24th kubal perahera", days: [21, 22, 23, 24] },
@@ -23,23 +31,24 @@ const categoryList = [
 
 const SeatsSection = () => {
   let [activeTab, setActiveTab] = useState(categoryList[0].title);
-  const [filterdSeats, setFilterdSeats] = useState<any[]>([]);
+  const [filterdSeats, setFilterdSeats] = useState<EasyListType[]>([]);
+
+  console.log(activeTab);
 
   useEffect(() => {
-    setFilterdSeats(list.filter((l) => l.categoryName === activeTab)[0].places);
+    setFilterdSeats(easyList.filter((l) => l.categoryName === activeTab));
   }, [activeTab]);
-  console.log(filterdSeats);
 
   return (
     <div id="seats">
       <SectionTitle title="seats" />
       <AnimatedTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="flex flex-wrap gap-1">
-        {filterdSeats.map(
-          (item: { placeName: string; availableDays: number[] }, i) => {
-            return <Seat key={i} itemData={item} />;
-          }
-        )}
+        {filterdSeats.map((item) => {
+          return item.palces.map((i, inx) => {
+            return <Seat key={inx} title={i.title} place={i.placeName} />;
+          });
+        })}
       </div>
     </div>
   );
@@ -85,7 +94,7 @@ function AnimatedTabs({
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             />
           )}
-          {day.title}
+          {day.title.toLowerCase()}
         </motion.button>
       ))}
     </div>
