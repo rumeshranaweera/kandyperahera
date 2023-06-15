@@ -1,32 +1,33 @@
-export const placeNames = [
-  { placeName: "Balaji Outside", availableDays: [21, 22, 23, 26, 27] },
-  { placeName: "Juice Bar", availableDays: [21, 22] },
-  { placeName: "Colombo str.", availableDays: [23, 26] },
-  { placeName: "Jayawi", availableDays: [24] },
-  {
-    placeName: "queens corridor",
-    availableDays: [25, 28, 29],
-    specialPrice: { front: 110 },
-  },
-  {
-    placeName: "swarnamahal",
-    availableDays: [25, 28, 29],
-    specialPrice: { front: 110 },
-  },
-  {
-    placeName: "HNB",
-    availableDays: [25, 28, 29],
-    specialPrice: { front: 110 },
-  },
-  {
-    placeName: "Nimali shopping center",
-    availableDays: [29],
-  },
-  {
-    placeName: "Flower Shop",
-    availableDays: [30],
-  },
-];
+// export const placeNames = [
+//   { placeName: "Balaji Outside", availableDays: [21, 22, 23, 26, 27] },
+//   { placeName: "Juice Bar", availableDays: [21, 22] },
+//   { placeName: "Colombo str.", availableDays: [23, 26] },
+//   { placeName: "Jayawi", availableDays: [24] },
+//   {
+//     placeName: "queens corridor",
+//     specialPrice: 110,
+//     availableDays: [25, 28, 29],
+//     specialPrice: { front: 110 },
+//   },
+//   {
+//     placeName: "swarnamahal",
+//     availableDays: [25, 28, 29],
+//     specialPrice: { front: 110 },
+//   },
+//   {
+//     placeName: "HNB",
+//     availableDays: [25, 28, 29],
+//     specialPrice: { front: 110 },
+//   },
+//   {
+//     placeName: "Nimali shopping center",
+//     availableDays: [29],
+//   },
+//   {
+//     placeName: "Flower Shop",
+//     availableDays: [30],
+//   },
+// ];
 
 export const list = [
   {
@@ -88,9 +89,20 @@ export const easyList = [
   {
     categoryName: "final kubal perahera",
     palces: [
-      { title: "25th Final kubal perahera", placeName: "Queens corridor" },
-      { title: "25th Final kubal perahera", placeName: "swarnamahal" },
-      { title: "25th Final kubal perahera", placeName: "HNB" },
+      {
+        title: "25th Final kubal perahera",
+        placeName: "Queens corridor",
+        specialPrice: 110,
+      },
+      {
+        title: "25th Final kubal perahera",
+        placeName: "unlimited",
+      },
+      {
+        title: "25th Final kubal perahera",
+        placeName: "HNB",
+        specialPrice: 110,
+      },
     ],
   },
   {
@@ -99,11 +111,19 @@ export const easyList = [
       { title: "26th Randoli perahera", placeName: "Balaji Outside" },
       { title: "26th Randoli perahera", placeName: "Colombo str." },
       { title: "27th Randoli perahera", placeName: "Balaji Outside" },
-      { title: "28th Randoli perahera", placeName: "queens corridor" },
-      { title: "28th Randoli perahera", placeName: "swarnamahal" },
-      { title: "28th Randoli perahera", placeName: "HNB" },
-      { title: "29th Randoli perahera", placeName: "queens corridor" },
-      { title: "29th Randoli perahera", placeName: "swarnamahal" },
+      {
+        title: "28th Randoli perahera",
+        placeName: "queens corridor",
+        specialPrice: 110,
+      },
+      { title: "28th Randoli perahera", placeName: "unlimited" },
+      { title: "28th Randoli perahera", placeName: "HNB", specialPrice: 110 },
+      {
+        title: "29th Randoli perahera",
+        placeName: "queens corridor",
+        specialPrice: 110,
+      },
+      { title: "29th Randoli perahera", placeName: "unlimited" },
     ],
   },
   {

@@ -4,7 +4,7 @@ import Seat from "./seat";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { list, placeNames, easyList } from "@/public/ticketsDetails";
+import { list, easyList } from "@/public/ticketsDetails";
 
 // type ListType = {
 //   categoryName: string;
@@ -19,8 +19,10 @@ type EasyListType = {
   palces: {
     title: string;
     placeName: string;
+    specialPrice?: number;
   }[];
 };
+const basePrice = 90;
 const categoryList = [
   { title: "21st-24th kubal perahera", days: [21, 22, 23, 24] },
   { title: "final kubal perahera", days: [25] },
@@ -46,7 +48,14 @@ const SeatsSection = () => {
       <div className="flex flex-wrap gap-1">
         {filterdSeats.map((item) => {
           return item.palces.map((i, inx) => {
-            return <Seat key={inx} title={i.title} place={i.placeName} />;
+            return (
+              <Seat
+                price={i.specialPrice || basePrice}
+                key={inx}
+                title={i.title}
+                place={i.placeName}
+              />
+            );
           });
         })}
       </div>

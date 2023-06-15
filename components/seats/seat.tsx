@@ -6,7 +6,15 @@ import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useStore } from "@/store/store";
 
-const Seat = ({ title, place }: { title: string; place: string }) => {
+const Seat = ({
+  title,
+  place,
+  price,
+}: {
+  title: string;
+  place: string;
+  price: number;
+}) => {
   // const orderdList = useStore((state) => state.addOrder);
 
   return (
@@ -19,7 +27,7 @@ const Seat = ({ title, place }: { title: string; place: string }) => {
       <div className="relative grid min-w-full grid-cols-4 pb-1 text-3xl font-extrabold border-b-4 border-yellow-400">
         <h3 className="col-span-3">{title}</h3>
         <div className="flex items-end justify-center h-16 text-black -translate-y-4 rounded-b-lg bg-gradient-to-t from-yellow-400 from-70%">
-          ${85}
+          ${price}
         </div>
       </div>
       {/* bottom */}
