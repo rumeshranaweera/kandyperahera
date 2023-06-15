@@ -7,6 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import Link from "next/link";
 import { IoTicket } from "react-icons/io5";
 
 const useBoundedScroll = (bounds: number) => {
@@ -38,14 +39,17 @@ function Logo({ logoAnimation = false }: { logoAnimation?: boolean }) {
   const animationVal = logoAnimation ? dynamicSize : "1.5rem";
 
   return (
-    <div className="cursor-pointer select-none hover:text-yellow-300">
+    <Link
+      href={"/"}
+      className="cursor-pointer select-none hover:text-yellow-300"
+    >
       <div className="flex items-center space-x-1 font-semibold ">
         <IoTicket className="w-10 h-10" />
         <motion.h1 style={{ fontSize: animationVal }}>
           Events In Kandy
         </motion.h1>
       </div>
-    </div>
+    </Link>
   );
 }
 

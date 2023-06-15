@@ -15,7 +15,11 @@ const Seat = ({
   place: string;
   price: number;
 }) => {
-  // const orderdList = useStore((state) => state.addOrder);
+  const addOrder = useStore((state) => state.addOrder);
+
+  const addToList = () => {
+    addOrder({ title, price, place });
+  };
 
   return (
     <motion.div
@@ -60,7 +64,7 @@ const Seat = ({
         </div>
       </div>
       <button
-        // onClick={addToList}
+        onClick={addToList}
         className="absolute px-4 py-2 font-bold text-black bg-yellow-400 rounded-lg bottom-2 right-2"
       >
         Add

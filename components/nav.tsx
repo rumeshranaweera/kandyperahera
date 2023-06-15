@@ -4,6 +4,7 @@ import Logo from "./logos";
 import { HiShoppingBag } from "react-icons/hi";
 import { twMerge } from "tailwind-merge";
 import { client } from "@/lib/prismaClient";
+import Link from "next/link";
 
 function Nav() {
   const orderList = useStore((state) => state.orderList);
@@ -20,7 +21,8 @@ function Nav() {
           <a href="#seats">
             <button className="primary-btn">Tickets</button>
           </a>
-          <div
+          <Link
+            href={"/checkout"}
             onClick={addDate}
             className={twMerge(
               "relative "
@@ -34,7 +36,7 @@ function Nav() {
             <span className="absolute top-0 right-0 px-1 text-xs font-bold text-black bg-yellow-400 rounded-full pointer-events-none md:-right-1 md:px-2 md:text-sm">
               {orderList.length}
             </span>
-          </div>
+          </Link>
         </div>
       </nav>
     </header>
