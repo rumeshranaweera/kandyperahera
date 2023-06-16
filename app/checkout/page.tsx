@@ -8,6 +8,7 @@ import { IoTicket } from "react-icons/io5";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || ""
@@ -16,6 +17,7 @@ const Checkout = () => {
   const router = useRouter();
   const orderList = useStore((state) => state.orderList);
   const clearCart = useStore((state) => state.clearCart);
+  console.log(orderList);
 
   const createCheckoutSession = async () => {
     const stripe = await stripePromise;
@@ -46,15 +48,17 @@ const Checkout = () => {
               />
             </div>
           )}
-
-          {orderList.map((item, index) => (
-            <CheckoutProduct
-              title={item.title}
-              price={item.price}
-              place={item.place}
-              key={index}
-            />
-          ))}
+          <div className="space-y-5">
+            {orderList.map((item, index) => (
+              <CheckoutProduct
+                index={index}
+                title={item.title}
+                price={item.price}
+                place={item.place}
+                key={index}
+              />
+            ))}
+          </div>
         </div>
         {orderList.length > 0 && (
           <button

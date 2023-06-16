@@ -17,6 +17,7 @@ import { list, easyList } from "@/public/ticketsDetails";
 type EasyListType = {
   categoryName: string;
   palces: {
+    id: number;
     title: string;
     placeName: string;
     specialPrice?: number;
@@ -48,6 +49,7 @@ const SeatsSection = () => {
           return item.palces.map((i, inx) => {
             return (
               <Seat
+                id={i.id}
                 price={i.specialPrice || basePrice}
                 key={inx}
                 title={i.title}

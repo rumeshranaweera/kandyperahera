@@ -7,10 +7,12 @@ import { twMerge } from "tailwind-merge";
 import { useStore } from "@/store/store";
 
 const Seat = ({
+  id,
   title,
   place,
   price,
 }: {
+  id: number;
   title: string;
   place: string;
   price: number;
@@ -18,7 +20,12 @@ const Seat = ({
   const addOrder = useStore((state) => state.addOrder);
 
   const addToList = () => {
-    addOrder({ title, price, place });
+    addOrder({
+      id,
+      title,
+      price,
+      place,
+    });
   };
 
   return (
