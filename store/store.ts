@@ -1,11 +1,5 @@
 import { create } from "zustand";
 
-type Product = {
-  title: string;
-  price: number;
-  place: string;
-};
-
 type Store = {
   orderList: Product[];
   addOrder: (item: Product) => void;

@@ -9,18 +9,12 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-type Product = {
-  title: string;
-  price: number;
-  place: string;
-};
-
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || ""
 );
 const Checkout = () => {
   const router = useRouter();
-  const orderdList = useStore((state) => state.orderList);
+  const orderList = useStore((state) => state.orderList);
   const clearCart = useStore((state) => state.clearCart);
 
   const createCheckoutSession = async () => {
@@ -28,7 +22,7 @@ const Checkout = () => {
 
     const checkoutSession = await axios
       .post("api/stripe-checkout-session", {
-        orderdList,
+        orderList,
       })
       .then((res) => {
         console.log("data", res.data);
@@ -41,7 +35,7 @@ const Checkout = () => {
       <div>
         <SectionTitle title="checkout" />
         <div className="flex flex-col p-5 space-y-10 ">
-          {orderdList.length === 0 && (
+          {orderList.length === 0 && (
             <div>
               <h4 className="pb-4 text-3xl font-semibold">
                 Your cart is empty
@@ -53,7 +47,7 @@ const Checkout = () => {
             </div>
           )}
 
-          {orderdList.map((item, index) => (
+          {orderList.map((item, index) => (
             <CheckoutProduct
               title={item.title}
               price={item.price}
@@ -62,7 +56,7 @@ const Checkout = () => {
             />
           ))}
         </div>
-        {orderdList.length > 0 && (
+        {orderList.length > 0 && (
           <button
             onClick={createCheckoutSession}
             className="px-6 py-4 mx-auto text-3xl font-extrabold text-black capitalize bg-yellow-400 rounded-full cursor-pointer w-fit"
@@ -71,7 +65,7 @@ const Checkout = () => {
           </button>
         )}
 
-        {orderdList.length === 0 && (
+        {orderList.length === 0 && (
           <Link
             href={"/#seats"}
             className="px-6 py-4 mx-auto text-3xl font-extrabold text-black capitalize bg-yellow-400 rounded-full cursor-pointer w-fit"
@@ -79,7 +73,7 @@ const Checkout = () => {
             back to Tickets section
           </Link>
         )}
-        {orderdList.length > 0 && (
+        {orderList.length > 0 && (
           <button
             className="block px-4 py-2 mx-auto mt-4 text-xl font-bold bg-red-700 rounded-full"
             onClick={() => clearCart()}
