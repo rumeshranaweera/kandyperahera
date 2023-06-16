@@ -8,45 +8,64 @@ import {
 
 const content = [
   {
-    trigger: "What is the Asela Perahera?",
+    trigger: "What is the meaning of Perahera?",
     content:
-      "The Asela Perahera is a famous cultural festival held annually in Sri Lanka to celebrate the arrival of the southwest monsoon and to pay homage to Lord Kataragama, a Hindu deity widely venerated in the country. It is a grand procession featuring traditional dancers, drummers, fire performers, and decorated elephants.",
+      "Perhara is more likely a parade held in Srilanka. The best known perahera is the Esala Perahera held in Kandy at the time of the full moon of the months of July/August.",
   },
+
   {
-    trigger: "When does the Asela Perahera take place?",
+    trigger: "What is the Kandy Esala Perahera?",
     content:
-      "The Asela Perahera usually takes place in the month of July, during the full moon period, which is considered auspicious in the Buddhist calendar. However, it's essential to check the specific dates each year, as they may vary.",
+      "The Kandy Esala Perahara is a famouse Culutural Festival held in July - August to pay homage to the Sacred Tooth Relic of Buddha. Kandy Esala Perahara is considerethe world and to be the oldest cultural event in the world and continues with it's colurful, glamorous splender making it an out of this world experience. ",
   },
+
   {
-    trigger: "When does the Asela Perahera take place?",
+    trigger: "When does the Kandy Esala Perahara take place?",
     content:
-      "The Asela Perahera usually takes place in the month of July, during the full moon period, which is considered auspicious in the Buddhist calendar. However, it's essential to check the specific dates each year, as they may vary.",
+      "Kandy Esala Perahera is celebrated annually in July or August and this year, it will be celebrated from August 21 to 31. This week-long holiday honors the Sacred Tooth Relic and the four 'guardian' Gods Natha, Vishnu, Kataragama, and Goddess Pattini.",
   },
+
   {
-    trigger: "Where does the Asela Perahera occur?",
+    trigger: "Where does the Kandy Esala Perahara occur?",
     content:
-      "The Asela Perahera is held in the town of Kataragama, located in the southeastern part of Sri Lanka. Kataragama is a significant religious and pilgrimage site, attracting both Buddhists and Hindus from across the country.",
+      "Kandy Esala Perahara is held in the town of Kandy,located in the central province of Sri Lanka. Kandy is a significant religious and pildgrimage site,attracting both local and foriegn tourists from across the world.",
   },
+
   {
-    trigger: "How long does the Asela Perahera last?",
+    trigger: "How long does the Kandy Esala Perahara last?",
     content:
-      'The duration of the Asela Perahera is typically around two weeks, with various events and processions taking place during this period. The grand finale, known as the "Maha Perahera," is the most elaborate and spectacular part of the festival.',
+      "Kandy Esala Perahara is typically around 10 days with various events and processions taking place during this period.",
   },
+
   {
-    trigger: "What happens during the Asela Perahera?",
+    trigger: "What happens during the the Kandy Esala Perahara?",
     content:
-      "During the Asela Perahera, devotees and spectators gather to witness the procession of beautifully adorned elephants, traditional dancers, drummers, and fire performers. The parade moves through the streets of Kataragama, accompanied by religious rituals, chanting, and offerings.",
+      "The Kandy Esala Perahera Casket which is considered as living Lord Buddha which parades the streets is worshipped by the divinity, humanity and elephants. This is considered to be the oldest cultural event in the world and continues with its colourful,glamorous splendour making it an out of this world experience.",
   },
-  {
-    trigger: "Can tourists participate in the Asela Perahera?",
-    content:
-      "Yes, tourists are welcome to witness and experience the Asela Perahera. However, it's important to respect the cultural and religious significance of the festival. It is advisable to dress modestly and behave respectfully during the event.",
-  },
+
   {
     trigger:
-      "Are there any special customs or practices associated with the Asela Perahera?",
+      "Are there any special customs or practice associated with the Kandy Esala Perahara?",
     content:
-      "The Asela Perahera holds deep cultural and religious significance for the locals. Many devotees fast and engage in various acts of penance during the festival. It is also common for people to make vows or offer prayers to Lord Kataragama during this time. Additionally, the festival provides an opportunity for traditional artisans and craftsmen to showcase their skills through various cultural exhibitions.",
+      "The Asela Perahera holds deep cultural and religious significance for the locals. Many devotees fast and engage in various acts of penance during the festival. It is also common for people to make vows or offer prayers to Sacred Tooth Relic of Lord Buddha during this time. Additionally, the festival provides an opportunity for traditional artisans and craftsmen to showcase their skills through various cultural exhibitions.",
+  },
+
+  {
+    trigger: "Who leads the Kandy Esala Perahara?",
+    content:
+      "The Kandy Esala Perahera actually comprises of five separate Peraheras - four from the Kandy devales (shrines) to the deities - with order of precedence maintained throughout. Led by the Dalada Maligawa Perahera, the second is to Natha, a deity of special importance to Kandy, believed to be Buddha-in-waiting.",
+  },
+
+  {
+    trigger: "What is the order of Kandy Perahera?",
+    content:
+      "The Kandy Maligawa Perahera is followed in order by those of the Natha, Vishnu, Kataragama and Pattini 'Devales' (Temples dedicated to these Gods) which are situated in the vicinity of the Kandy Maligawa (Temple of the Tooth).",
+  },
+
+  {
+    trigger: "Can tourists participate in the Kandy Esala Perahara?",
+    content:
+      "Yes, tourists are welcome to witness and experience the Asela Perahera. However, it's important to respect the cultural and religious significance of the festival. It is advisable to dress modestly and behave respectfully during the event.",
   },
 ];
 

@@ -5,6 +5,9 @@ import SectionTitle from "@/components/sectionTitle";
 import { useStore } from "@/store/store";
 import Link from "next/link";
 import { IoTicket } from "react-icons/io5";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 type Product = {
   title: string;
@@ -12,11 +15,27 @@ type Product = {
   place: string;
 };
 
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || ""
+);
 const Checkout = () => {
+  const router = useRouter();
   const orderdList = useStore((state) => state.orderList);
   const clearCart = useStore((state) => state.clearCart);
 
-  console.log(orderdList);
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    const checkoutSession = await axios
+      .post("api/stripe-checkout-session", {
+        orderdList,
+      })
+      .then((res) => {
+        console.log("data", res.data);
+        router.push(res.data);
+      });
+  };
+
   return (
     <PageDiv className="mt-24">
       <div>
@@ -44,9 +63,12 @@ const Checkout = () => {
           ))}
         </div>
         {orderdList.length > 0 && (
-          <h3 className="px-6 py-4 mx-auto text-3xl font-extrabold text-black capitalize bg-yellow-400 rounded-full cursor-pointer w-fit">
+          <button
+            onClick={createCheckoutSession}
+            className="px-6 py-4 mx-auto text-3xl font-extrabold text-black capitalize bg-yellow-400 rounded-full cursor-pointer w-fit"
+          >
             proceed to checkout
-          </h3>
+          </button>
         )}
 
         {orderdList.length === 0 && (
@@ -59,7 +81,7 @@ const Checkout = () => {
         )}
         {orderdList.length > 0 && (
           <button
-            className="px-4 py-2 mt-4 text-xl font-bold bg-red-700 rounded-full"
+            className="block px-4 py-2 mx-auto mt-4 text-xl font-bold bg-red-700 rounded-full"
             onClick={() => clearCart()}
           >
             Clear Cart

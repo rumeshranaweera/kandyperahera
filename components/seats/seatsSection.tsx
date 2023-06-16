@@ -35,8 +35,6 @@ const SeatsSection = () => {
   let [activeTab, setActiveTab] = useState(categoryList[0].title);
   const [filterdSeats, setFilterdSeats] = useState<EasyListType[]>([]);
 
-  console.log(activeTab);
-
   useEffect(() => {
     setFilterdSeats(easyList.filter((l) => l.categoryName === activeTab));
   }, [activeTab]);
