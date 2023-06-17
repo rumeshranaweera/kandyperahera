@@ -23,3 +23,16 @@ model Day {
   date   Int     @unique
   places Place[]
 }
+
+model ExploreItem {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  category    Category
+  description String
+  address     String?
+}
+
+enum Category {
+  place
+  food
+}

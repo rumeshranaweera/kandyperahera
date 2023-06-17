@@ -1,6 +1,5 @@
 import { useStore } from "@/store/store";
 import { HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
 
 const CheckoutProduct = ({
   index,

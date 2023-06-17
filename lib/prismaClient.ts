@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export async function client() {
   // ... you will write your Prisma Client queries here
-  return prisma.day.create({ data: { date: 2 } });
+  return prisma.day.deleteMany();
 }
 
 // client()
