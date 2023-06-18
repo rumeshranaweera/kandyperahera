@@ -24,11 +24,6 @@ const imageList = [
   "/explore/train.jpg",
 ];
 
-export const metadata: Metadata = {
-  title: "Explore",
-  description: "Events In Kandy - Buy your Tickets",
-};
-
 const places = [
   // {
   //   title: "Soul Food Vegetarian Kitchen",
