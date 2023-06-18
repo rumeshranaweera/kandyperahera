@@ -29,7 +29,6 @@ model ExploreItem {
   title       String
   category    Category
   description String
-  address     String?
 }
 
 enum Category {

@@ -9,6 +9,11 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
+export const metadata = {
+  title: "Checkout",
+  description: "Events In Kandy - Buy your Tickets",
+};
+
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || ""
 );

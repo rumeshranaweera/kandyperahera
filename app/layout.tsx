@@ -11,7 +11,10 @@ const canveat = Caveat({
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: "Events In Kandy",
+  title: {
+    default: "Events In Kandy",
+    template: "%s | Events In Kandy",
+  },
   description: "Events In Kandy - Buy your Tickets",
 };
 
