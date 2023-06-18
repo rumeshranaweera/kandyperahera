@@ -1,25 +1,32 @@
+import Image from "next/image";
+
 const ExplorCard = ({
   title,
+  image,
   desc,
   category,
-  address,
 }: {
   title: string;
+  image: string;
   desc: string;
   category: string;
-  address: string;
 }) => {
   return (
     <>
       {/* component */}
-      <div className="relative w-full max-w-sm mx-auto text-left rounded-lg overflow-clip bg-yellow-400/5">
+      <div className="relative w-full max-w-sm p-1 mx-auto text-left border rounded-lg overflow-clip bg-yellow-400/5 h-fit border-yellow-400/10">
         <div className="relative inline-block w-full transition-transform duration-300 ease-in-out transform">
           <div className="rounded-lg">
             <div className="relative flex justify-center overflow-hidden rounded-lg h-60">
               <div className="w-full transition-transform duration-500 ease-in-out transform hover:scale-110">
-                <img
-                  src="https://media-cdn.tripadvisor.com/media/photo-m/1280/28/0f/19/2c/soul-food.jpg"
-                  alt=""
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  placeholder="blur"
+                  loading="lazy"
+                  blurDataURL={image}
+                  className="object-cover"
                 />
               </div>
 
@@ -33,11 +40,11 @@ const ExplorCard = ({
                 <div className="flex items-center">
                   <div className="relative">
                     <h2 className="text-xl font-medium md:text-2xl">{title}</h2>
-                    <p className="mt-2 text-sm ">{address}</p>
+                    {/* <p className="mt-2 text-sm ">{address}</p> */}
                   </div>
                 </div>
               </div>
-              <div className="pt-3 mt-2 text-center border-t border-gray-200">
+              <div className="pt-3 mt-2 text-center border-t border-yellow-400/50">
                 {desc}
               </div>
               <div className="grid grid-cols-2 grid-rows-2 gap-4 pt-3 pb-3 mt-2 ">

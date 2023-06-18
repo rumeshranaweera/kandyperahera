@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["dynamic-media-cdn.tripadvisor.com"],
+    domains: [
+      "dynamic-media-cdn.tripadvisor.com",
+      "media-cdn.tripadvisor.com",
+      "cdn.pixabay.com",
+      "images.unsplash.com",
+      "lh3.googleusercontent.com",
+      "upload.wikimedia.org",
+    ],
   },
   env: {
     NEXT_PUBLIC_TEST: "HELLO",

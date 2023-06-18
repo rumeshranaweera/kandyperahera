@@ -81,7 +81,7 @@ function Nav() {
             if (target.nodeName === "DIALOG") target.close();
           }}
         >
-          <div className="p-2 divide-y-2 divide-yellow-400">
+          <div className="p-2 divide-y-4 divide-yellow-400">
             {/* top */}
             <div className="flex justify-between px-4 ">
               <h3 className="text-3xl text-left ">MENU</h3>
@@ -89,7 +89,7 @@ function Nav() {
                 <HiX size={40} />
               </button>
             </div>
-            <div className="flex flex-col my-2 text-xl font-bold gap-y-2 ">
+            <div className="flex flex-col py-4 my-4 text-2xl font-bold gap-y-4 ">
               <Link href="/#seats">
                 <button
                   onClick={() => dialogRef?.current?.close()}

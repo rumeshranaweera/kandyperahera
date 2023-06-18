@@ -14,6 +14,7 @@ import "@/components/styles.css";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import Image from "next/image";
 import ExplorCard from "@/components/explorCard";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const imageList = [
   "/explore/test.webp",
@@ -24,15 +25,66 @@ const imageList = [
 const places = [
   {
     title: "Soul Food Vegetarian Kitchen",
+    image:
+      "https://media-cdn.tripadvisor.com/media/photo-m/1280/28/0f/19/2c/soul-food.jpg",
     desc: " Soul Food is a vegetarian restuarant with vegan options that located in Kandy. They serves Srilankan ,and fusion food.",
     category: "food",
-    address: "48 Sri Wickrama Rajasinghe Mawatha, Kandy 20000",
+  },
+  {
+    title: "Temple of the Tooth Relic ",
+    image:
+      "https://cdn.pixabay.com/photo/2019/04/25/15/16/sri-lanka-4155138_1280.jpg",
+    desc: " The Temple of The Sacred Tooth Relic is situated in the former Kingdom of Kandy. Temple of the Tooth is a Buddhist Temple that houses the sacred relic of the tooth of the Buddha. The sacred relic was brought to Sri Lanka in the 3rd century BC and since has been closely associated with the royalty of the island nation with magnificent temples built to enshrine it in every kingdom.  Temple of the Tooth is also famous for its magnificent architecture. There are so many ancient wood carvings, paintings, and buildings belonging to the ancient Kandy Kingdom. Temple of Tooth is a great place a religious and historical destination to visit in Kandy.",
+    category: "*Travel",
+  },
+
+  {
+    title: "Royal Botanical Garden. ",
+    image:
+      "https://cdn.pixabay.com/photo/2020/12/31/13/57/peradeniya-botanical-garden-5876612_1280.jpg",
+    desc: " Royal Botanical Garden is situated in Peradeniya, Kandy. It is the biggest botanical garden in Srilanka with 60 – hectares of land. There are some 4,000 different species of plants at Peradeniya Gardens. More than 4000 species of plants including woody trees, Palms, Ferns, Orchids, and shrubs are present within the gardens. Peradeniya’s botanical garden is a perfect place for tourists in Kandy.",
+    category: "travel",
+  },
+
+  {
+    title: "Kandy Viewpoint.",
+    image:
+      "https://images.unsplash.com/photo-1661928684586-eab4463502be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    desc: "Kandy Viewpoint is also known as “Arthur’s Seat”. The place is a nice viewpoint of Kandy city, especially the Lake. You can take the whole view of the Kandy city from here. ",
+    category: "travel",
+  },
+
+  {
+    title: "World Buddhist Museum. ",
+    image:
+      "https://lh3.googleusercontent.com/p/AF1QipPv7boXjRjFWJN3N1xJhHk_w7NgFjF1QRcwwi7g=s680-w680-h510",
+    desc: "World Buddhist Museum is the world’s first international Buddhist Museum. It is located next to the National Museum of Kandy and the Temple of the Tooth in Kandy, Sri Lanka. Museum showcasing exhibits devoted to Buddhist history around the world in a Victorian-era space. Also, the museum showcases the expansion of Buddhism throughout the Asia and rest of the world. This is the only museum that demonstrates the expansion of Buddhism all around the world. ",
+    category: "travel",
+  },
+
+  {
+    title: "Udawaththakale",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Lianas%2C_Udawattakele.jpg/800px-Lianas%2C_Udawattakele.jpg",
+    desc: "Udawaththakale forest reserve is a historical forest reserve located on a hill – ridge in the city of Kandy. Udawaththa kale is also known as “ The Garden above the royal palace.” It has a large variety of plant species such as lianas, shrubs, and small trees. There are different kinds of mammals as well in here varying from small to medium size including snakes and other reptiles. This place was first designed as a forest reserve in 1856, and it became a sanctuary in 1938.",
+    category: "travel",
+  },
+
+  {
+    title: "Big Buddha Statue.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sri_Maha_Bodhi_Vihara_Statue.jpg/600px-Sri_Maha_Bodhi_Vihara_Statue.jpg",
+    desc: "Big Buddha Statue is situated in Bahirawakanda Temple. The buddha statue can be seen from almost everywhere in Kandy. It stands at 26.83 m (88.0 ft) high and is one of the tallest Buddha statues in Sri Lanka.",
+    category: "travel",
   },
 ];
+
 const Explore = () => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "250%"]);
   return (
     <>
-      <div className="relative h-96 ">
+      <motion.div className="relative h-96 " style={{ y }}>
         <div className="absolute inset-0 z-10 pointer-events-none select-none bg-gradient-to-t from-slate-900 from-[-20%] via-transparent " />
         <Swiper
           fadeEffect={{ crossFade: false }}
@@ -68,7 +120,7 @@ const Explore = () => {
             .sort(() => 0.5 - Math.random())}
           )
         </Swiper>
-      </div>
+      </motion.div>
 
       <PageDiv className="relative z-30 pt-1 -mt-20 bg-slate-900/50 backdrop-blur-sm rounded-t-xl">
         <SectionTitle title="Explore" />
@@ -76,18 +128,19 @@ const Explore = () => {
         {/* main p */}
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-          quidem ipsa repudiandae, accusamus dolorum officiis deleniti hic et
-          ipsam dicta magni quos aliquam quasi soluta inventore obcaecati quis
-          eaque quia? Nisi reprehenderit perspiciatis facere doloremque, sed
-          ipsum ratione vero temporibus est nostrum.{" "}
+          Kandy is the cultural capital of Srilanka and home to the Temple of
+          The Sacred Tooth Relic. For Sinhala people, this is the holiest place
+          on the island. But for the tourists, Kandy offers more than religious
+          satisfaction. There are pleasing old quarters, a central lake, a
+          clutch of museums, and surrounding vicinity, some botanical gardens.
+          Kandy is a fascinating place to visit.
         </p>
         {/* palces */}
         <div>
           <h2 className="max-w-sm my-5 text-4xl tracking-wider text-left">
             Food
           </h2>
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+          <div className="space-y-2 columns-1 sm:columns-2">
             {places.map((palce, i) => (
               <ExplorCard key={i} {...palce} />
             ))}
