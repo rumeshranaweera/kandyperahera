@@ -3,7 +3,6 @@ import SectionTitle from "@/components/sectionTitle";
 import ExplorCard from "@/components/explorCard";
 import ExploreCarousel from "@/components/carousel/exploreCarousel";
 import { Suspense } from "react";
-import axios from "axios";
 
 const places = [
   // {

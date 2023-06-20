@@ -3,10 +3,10 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function addNewExplore(data: FormValue) {
-  // ... you will write your Prisma Client queries here
-  return prisma.exploreItem.create({ data });
-}
+// export async function addNewExplore(data: FormValue) {
+//   // ... you will write your Prisma Client queries here
+//   return prisma.exploreItem.create({ data });
+// }
 export async function addMultipleExplore(data: FormValue[]) {
   // ... you will write your Prisma Client queries here
   return prisma.exploreItem.createMany({ data });
