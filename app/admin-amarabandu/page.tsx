@@ -1,7 +1,7 @@
 "use client";
 import PageDiv from "@/components/pageDiv";
 import SectionTitle from "@/components/sectionTitle";
-import { addMultipleExplore, getExploreData } from "@/lib/prismaClient";
+// import { addMultipleExplore, getExploreData } from "@/lib/prismaClient";
 
 const page = () => {
   // const data = await getExploreData();
