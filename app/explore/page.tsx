@@ -1,28 +1,9 @@
-"use client";
 import PageDiv from "@/components/pageDiv";
 import SectionTitle from "@/components/sectionTitle";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import "@/components/styles.css";
-
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
-import Image from "next/image";
 import ExplorCard from "@/components/explorCard";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Metadata } from "next";
-
-const imageList = [
-  "/explore/test.webp",
-  "/explore/test.webp",
-  "/explore/test.webp",
-  "/explore/train.jpg",
-];
+import ExploreCarousel from "@/components/carousel/exploreCarousel";
+import { Suspense } from "react";
+import axios from "axios";
 
 const places = [
   // {
@@ -37,7 +18,7 @@ const places = [
     image:
       "https://cdn.pixabay.com/photo/2019/04/25/15/16/sri-lanka-4155138_1280.jpg",
     desc: " The Temple of The Sacred Tooth Relic is situated in the former Kingdom of Kandy. Temple of the Tooth is a Buddhist Temple that houses the sacred relic of the tooth of the Buddha. The sacred relic was brought to Sri Lanka in the 3rd century BC and since has been closely associated with the royalty of the island nation with magnificent temples built to enshrine it in every kingdom.  Temple of the Tooth is also famous for its magnificent architecture. There are so many ancient wood carvings, paintings, and buildings belonging to the ancient Kandy Kingdom. Temple of Tooth is a great place a religious and historical destination to visit in Kandy.",
-    category: "*Travel",
+    category: "travel",
     map: "https://maps.app.goo.gl/uJ2h4wcLUAxks1C39",
     address: "Kandy",
     rating: 4.9,
@@ -93,7 +74,7 @@ const places = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sri_Maha_Bodhi_Vihara_Statue.jpg/600px-Sri_Maha_Bodhi_Vihara_Statue.jpg",
     desc: "Big Buddha Statue is situated in Bahirawakanda Temple. The buddha statue can be seen from almost everywhere in Kandy. It stands at 26.83 m (88.0 ft) high and is one of the tallest Buddha statues in Sri Lanka.",
     category: "travel",
-    map: "https://maps.app.goo.gl/Pos1DaCzafATsx8x7",
+    map: "https://goo.gl/maps/kKKDvDLBetTh3obcA",
     address: "Bahirawa Kanda Rd, Kandy",
     rating: 4.8,
   },
@@ -131,54 +112,19 @@ const places = [
   },
 ];
 
-const Explore = () => {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "250%"]);
+const Explore = async () => {
+  // const res = await axios("eventsinkandy.vercel.app/api/get-explore-data");
+  const data = "dfajlsdf";
   return (
     <>
-      <motion.div className="relative h-96 " style={{ y }}>
-        <div className="absolute inset-0 z-10 pointer-events-none select-none bg-gradient-to-t from-slate-900 from-[-20%] via-transparent " />
-        <Swiper
-          fadeEffect={{ crossFade: false }}
-          speed={700}
-          centeredSlides={true}
-          autoplay={{
-            delay: 5500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation
-          loop
-          modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {imageList
-            .map((img, i) => (
-              <SwiperSlide key={i}>
-                <Image
-                  src={`/explore/img${i}.jpg`}
-                  alt={`${"img" + i}`}
-                  fill
-                  sizes="1024"
-                  loading="lazy"
-                  placeholder="blur"
-                  blurDataURL={`/imgs/img-${i}.jpg`}
-                  className="object-cover"
-                />
-              </SwiperSlide>
-            ))
-            .sort(() => 0.5 - Math.random())}
-          )
-        </Swiper>
-      </motion.div>
-
-      <PageDiv className="relative z-30 pt-1 -mt-20 bg-slate-900/50 backdrop-blur-sm rounded-t-xl">
+      <ExploreCarousel />
+      <PageDiv className="relative z-30 max-w-6xl pt-1 -mt-20 bg-slate-900/50 backdrop-blur-sm rounded-t-xl">
         <SectionTitle title="Explore" />
+        <Suspense fallback={<h1>loading....</h1>}>
+          <div>{JSON.stringify(data)}</div>
+        </Suspense>
 
         {/* main p */}
-
         <p>
           Kandy is the cultural capital of Srilanka and home to the Temple of
           The Sacred Tooth Relic. For Sinhala people, this is the holiest place
@@ -187,12 +133,10 @@ const Explore = () => {
           clutch of museums, and surrounding vicinity, some botanical gardens.
           Kandy is a fascinating place to visit.
         </p>
+
         {/* palces */}
         <div>
-          <h2 className="max-w-sm my-5 text-4xl tracking-wider text-left">
-            Food
-          </h2>
-          <div className="space-y-2 columns-1 sm:columns-2">
+          <div className="mt-8 lg:columns-3 columns-1 sm:columns-2">
             {places.map((palce, i) => (
               <ExplorCard key={i} {...palce} />
             ))}

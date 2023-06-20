@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { useRef } from "react";
-import Carousel from "./carousel";
+import Carousel from "./carousel/carousel";
 
 function Hero() {
   const sectionRef = useRef(null);

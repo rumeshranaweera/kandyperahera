@@ -25,13 +25,17 @@ model Day {
 }
 
 model ExploreItem {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  title       String
-  category    Category
-  description String
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  image    String
+  title    String   @unique
+  category Category
+  desc     String
+  map      String
+  rating   Float
+  address  String
 }
 
 enum Category {
-  place
+  travel
   food
 }

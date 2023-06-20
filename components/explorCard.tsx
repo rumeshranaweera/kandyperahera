@@ -21,7 +21,7 @@ const ExplorCard = ({
   return (
     <>
       {/* component */}
-      <div className="relative w-full max-w-sm p-1 mx-auto text-left border rounded-lg overflow-clip bg-yellow-400/5 h-fit border-yellow-400/10">
+      <div className="relative w-full max-w-sm p-1 mx-auto mb-4 text-left border rounded-lg border-yellow-400/70 overflow-clip bg-yellow-400/5 h-fit">
         <div className="relative inline-block w-full transition-transform duration-300 ease-in-out transform">
           <div className="rounded-lg">
             <div className="relative flex justify-center overflow-hidden rounded-lg h-60">
@@ -30,9 +30,7 @@ const ExplorCard = ({
                   src={image}
                   alt={title}
                   fill
-                  placeholder="blur"
                   loading="lazy"
-                  blurDataURL={image}
                   className="object-cover"
                 />
               </div>

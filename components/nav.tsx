@@ -3,7 +3,6 @@ import { useStore } from "@/store/store";
 import Logo from "./logos";
 import { HiShoppingBag, HiMenu, HiX } from "react-icons/hi";
 import { twMerge } from "tailwind-merge";
-import { client } from "@/lib/prismaClient";
 import Link from "next/link";
 import { useRef } from "react";
 import SectionTitle from "./sectionTitle";
@@ -11,7 +10,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 function Nav() {
   const orderList = useStore((state) => state.orderList);
-  const addDate = () => client();
 
   const dialogRef = useRef<HTMLDialogElement>(null);
   return (
@@ -30,12 +28,11 @@ function Nav() {
         </div>
         {/* right */}
         <div className="hidden gap-2 md:flex">
-          <a href="#seats">
+          <Link href="/#seats">
             <button className="primary-btn">Tickets</button>
-          </a>
+          </Link>
           <Link
             href={"/checkout"}
-            onClick={addDate}
             className={twMerge(
               "relative "
               // orderList.length <= 0 && "hidden"
@@ -54,7 +51,6 @@ function Nav() {
         <div className="flex gap-2 md:hidden">
           <Link
             href={"/checkout"}
-            onClick={addDate}
             className={twMerge(
               "relative "
               // orderList.length <= 0 && "hidden"
