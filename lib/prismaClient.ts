@@ -3,9 +3,9 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function addNewExplore(data: FormValue) {
-  return prisma.exploreItem.create({ data });
-}
+// export async function addNewExplore(data: FormValue) {
+//   return prisma.exploreItem.create({ data });
+// }
 // export async function addMultipleExplore(data: FormValue[]) {
 //   return prisma.exploreItem.createMany({ data });
 // }
